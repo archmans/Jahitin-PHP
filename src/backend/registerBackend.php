@@ -1,5 +1,5 @@
 <?php
-include "../config/config.php";
+include "../config/config.php"; // bermasalah
 
 session_start();
 error_reporting(0);
@@ -21,7 +21,7 @@ if (isset($_POST['register'])) {
             $_SESSION['login'] = true;
             $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
-            header("location: ../homepageUser.php");
+            header("location: ..\homepage.php");
         } else {
             echo "<script>alert('Registration Failed!')</script>";
         }
