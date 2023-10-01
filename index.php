@@ -1,3 +1,3 @@
 <?php
 
-header("Location: src/registerPage.php");
+header("Location: src/loginPage.php");
