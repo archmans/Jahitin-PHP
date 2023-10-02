@@ -65,14 +65,8 @@ function uploadGambar($parameter) {
 
 	var_dump($namaFileBaru);
 
-	if (move_uploaded_file($tmpName, '../img/' . $namaFileBaru)) {
-		return $namaFileBaru;
-	} else {
-		echo "<script>
-				alert('Gagal mengunggah gambar!');
-			</script>";
-		return false;
-	}
+	move_uploaded_file($tmpName, '../img/' . $namaFileBaru);
+	return $namaFileBaru;
 }
 
 function uploadVid($parameter) {
@@ -110,14 +104,8 @@ function uploadVid($parameter) {
 	$namaFileBaru .= $ekstensiVideo;
 	var_dump($namaFileBaru);
 
-	if (move_uploaded_file($tmpName, '../vid/' . $namaFileBaru)) {
-		return $namaFileBaru;
-	} else {
-		echo "<script>
-				alert('Gagal mengunggah gambar!');
-			</script>";
-		return false;
-	}
+	move_uploaded_file($tmpName, '../vid/' . $namaFileBaru);
+	return $namaFileBaru;
 }
 
 
@@ -157,10 +145,33 @@ function updateTailor($data) {
 	$nama = htmlspecialchars($data["nama"]);
 	$alamat = htmlspecialchars($data["alamat"]);
     $jenis = htmlspecialchars($data["jenis"]);
-    $foto_tailor = htmlspecialchars($data["foto_tailor"]);
-    $video_tailor = htmlspecialchars($data["video_tailor"]);
-	var_dump($id);
-	var_dump($nama);
+	$oldFoto = htmlspecialchars($data["oldFoto"]);
+	$oldVideo = htmlspecialchars($data["oldVideo"]);
+
+	// cek apakah user pilih gambar baru atau tidak
+    if ($_FILES['foto_tailor']['error'] === 4) {
+        $foto_tailor = $oldFoto;
+    } else {
+        $foto = 'foto_tailor';
+        $foto_tailor = uploadGambar($foto);
+
+        if ($foto_tailor === false) {
+            return false;
+        }
+    }
+
+    // cek apakah user pilih video baru atau tidak
+    if ($_FILES['video_tailor']['error'] === 4) {
+        $video_tailor = $oldVideo;
+    } else {
+        $video = 'video_tailor';
+        $video_tailor = uploadVid($video);
+
+        if ($video_tailor === false) {
+            return false;
+        }
+    }
+
 	$sql = "UPDATE tailor SET
                 nama = '$nama',
                 alamat = '$alamat',

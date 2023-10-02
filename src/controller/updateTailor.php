@@ -30,9 +30,11 @@ if( isset($_POST["update"]) ) {
 </head>
 <body>
 	<h1>Update Data Tailor</h1>
-	<form action="" method="post">
+	<form action="" method="post" enctype="multipart/form-data">
 		<ul>
 				<input type="hidden" name="id" value="<?php echo $tailor["tailorID"]; ?>">
+				<input type="hidden" name="oldFoto" value="<?php echo $tailor["foto_tailor"]; ?>">
+				<input type="hidden" name="oldVideo" value="<?php echo $tailor["video_tailor"]; ?>">
 			<li>
 				<label for="nama">Name : </label>
 				<input type="text" name="nama" id="nama" value="<?php echo $tailor["nama"]; ?>">
@@ -47,11 +49,16 @@ if( isset($_POST["update"]) ) {
 			</li>
 			<li>
 				<label for="foto_tailor">Picture : </label>
-				<input type="text" name="foto_tailor" id="foto_tailor" value="<?php echo $tailor["foto_tailor"]; ?>">
+				<img src="../img/<?= $tailor["foto_tailor"]; ?>" width="100"></img>
+				<br>
+				<input type="file" name="foto_tailor" id="foto_tailor">
 			</li>
+			<br>
             <li>
 				<label for="video_tailor">Video : </label>
-				<input type="text" name="video_tailor" id="video_tailor" value="<?php echo $tailor["video_tailor"]; ?>">
+				<video src="../vid/<?= $tailor["video_tailor"]; ?>" width="100">
+				</video><br>
+				<input type="file" name="video_tailor" id="video_tailor">
 			</li>
 			<li>
 				<button type="submit" id="submit" name="update">Update Data</button>
