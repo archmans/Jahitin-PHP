@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
             $_SESSION['login'] = true;
             $_SESSION['username'] = $row['username'];
             $_SESSION['email'] = $row['email'];
-            header("location: ../homepage.php");
+            header("location: ../homePage.php");
             exit;
         } else {
             echo "<script>alert('Password is Incorrect!')</script>";
