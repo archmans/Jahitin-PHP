@@ -2,7 +2,6 @@
 include "../config/config.php";
 
 session_start();
-error_reporting(0);
 
 if (isset($_POST['register'])) {
     $username = $_POST['username'];
@@ -24,8 +23,10 @@ if (isset($_POST['register'])) {
             header("location: ..\homepage.php");
         } else {
             echo "<script>alert('Registration Failed!')</script>";
+            header("location: ..\registerPage.php");
         }
     } else {
         echo "<script>alert('Username or Email Already Exists!')</script>";
+        header("location: ..\registerPage.php");
     }
 }

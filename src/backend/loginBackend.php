@@ -1,7 +1,6 @@
 <?php
 session_start();
 include "../config/config.php";
-error_reporting(0);
 
 if (isset($_POST['login'])) {
     $username = $_POST['username'];
@@ -19,9 +18,11 @@ if (isset($_POST['login'])) {
             exit;
         } else {
             echo "<script>alert('Password is Incorrect!')</script>";
+            header("location: ../loginPage.php");
         }
     } else {
         echo "<script>alert('Username is Incorrect!')</script>";
+        header("location: ../loginPage.php");
     }
 }
 ?>

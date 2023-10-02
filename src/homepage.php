@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if (!isset($_SESSION["login"])) {
+        header("location: loginPage.php");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +30,7 @@
                     <div class="navbar-right">
                         <a href="homepageUser.php">Home</a>
                         <a href="profile.php">Profile</a>
-                        <a href="loginPage.php">Logout</a>
+                        <a href="backend/logout.php">Logout</a>
                     </div>
             </div>
         </div>      
