@@ -17,12 +17,16 @@ if (isset($_POST['login'])) {
             header("location: ../homePage.php");
             exit;
         } else {
-            echo "<script>alert('Password is Incorrect!')</script>";
-            header("location: ../loginPage.php");
+            echo "<script>
+                    alert('Password is Incorrect!')
+                    document.location.href = '../loginPage.php';
+                </script>";
         }
     } else {
-        echo "<script>alert('Username is Incorrect!')</script>";
-        header("location: ../loginPage.php");
+        echo "<script>
+                alert('Username is Incorrect!')
+                document.location.href = '../loginPage.php';
+            </script>";
     }
 }
 ?>
