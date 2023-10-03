@@ -11,6 +11,7 @@ $tailor = query("select * from tailor");
 if( isset($_POST["search"]) ) {
 	$tailor = search($_POST["keyword"]);
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +20,13 @@ if( isset($_POST["search"]) ) {
 	<title>Halaman Admin</title>
 </head>
 <body>
+	<a href="manageUser.php">Manage User</a>
 
 <h1>List Tailor</h1>
 
 <a href="controller/addTailor.php">Add Tailor</a>
+<br><br>
+<a href="profilPage.php">Profil</a>
 <br><br>
 <a href="backend/logout.php">Logout</a>
 
@@ -52,7 +56,7 @@ if( isset($_POST["search"]) ) {
 	<?php foreach( $tailor as $row ) { ?>
 	<tr>
 		<td><?= $i; ?></td>
-		<td><a href="controller/updateTailor.php?id=<?php echo $row["tailorID"]; ?>">ubah</a> | <a href="controller/deleteTailor.php?id=<?php echo $row["tailorID"]; ?>" onclick="return confirm('yakin?')">hapus</a></td>
+		<td><a href="controller/updateTailor.php?id=<?php echo $row["tailorID"]; ?>">Update</a> | <a href="controller/deleteTailor.php?id=<?php echo $row["tailorID"]; ?>" onclick="return confirm('yakin?')">Delete</a> | <a href="reviewPage.php?id=<?php echo $row["tailorID"]; ?>">Review</a></td>
 		<td><?= $row["nama"]; ?></td>
 		<td><?= $row["alamat"]; ?></td>
 		<td><?= $row["jenis"]; ?></td>
@@ -66,7 +70,6 @@ if( isset($_POST["search"]) ) {
 	<?php $i++; ?>
 	<?php } ?>
 </table>
-
 
 </body>
 </html>
