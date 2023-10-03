@@ -12,6 +12,7 @@ if (isset($_POST['login'])) {
         $row = mysqli_fetch_assoc($result);
         if ($password == $row['password']) {
             $_SESSION['login'] = true;
+            $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['email'] = $row['email'];
             header("location: ../homePage.php");
