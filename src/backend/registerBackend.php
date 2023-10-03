@@ -20,7 +20,7 @@ if (isset($_POST['register'])) {
             $_SESSION['login'] = true;
             $_SESSION['username'] = $username;
             $_SESSION['email'] = $email;
-            header("location: ..\homePage.php");
+            header("location: ..\loginPage.php");
         } else {
             echo "<script>alert('Registration Failed!')</script>";
             header("location: ..\registerPage.php");
