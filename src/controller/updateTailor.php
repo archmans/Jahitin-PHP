@@ -4,7 +4,6 @@ require 'functions.php';
 $tailorID = $_GET["id"];
 $tailor = query("SELECT * FROM tailor WHERE tailorID = $tailorID")[0];
 
-
 if( isset($_POST["update"]) ) {
 	if( updateTailor($_POST) > 0 ) {
 		echo "<script>
