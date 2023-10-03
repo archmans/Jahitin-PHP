@@ -10,7 +10,7 @@ if( isset($_POST["tambah"]) ) {
 	} else {
 		echo "<script>
 				alert('data gagal ditambahkan!');
-				document.location.href = '../homePage.php';
+				document.location.href = 'addTailor.php';
 		</script>";
 	}
 }
@@ -26,6 +26,7 @@ if( isset($_POST["tambah"]) ) {
 </head>
 <body>
 	<h1>Tambah Data Tailor</h1>
+	<a href="../homePage.php">Back</a>
 	<form action="" method="post" enctype="multipart/form-data">
 		<ul>
 			<li>

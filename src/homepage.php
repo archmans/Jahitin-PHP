@@ -43,6 +43,11 @@ if( isset($_POST["search"]) ) {
 		<th>Picture</th>
 		<th>Video</th>
 	</tr>
+	<?php if (search($_POST["keyword"]) == null) { ?>
+	<tr>
+		<td colspan="7" align="center">Data not found</td>
+	</tr>
+	<?php } ?>
 	<?php $i = 1; ?>
 	<?php foreach( $tailor as $row ) { ?>
 	<tr>

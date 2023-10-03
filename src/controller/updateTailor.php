@@ -13,8 +13,8 @@ if( isset($_POST["update"]) ) {
 			</script>";
 	} else {
 		echo "<script>
-				alert('data gagal diupdate!');
-				document.location.href = '../homePage.php';
+				alert('masukkan data dengan benar, data gagal diupdate!');
+				document.location.href = 'updateTailor.php?id=$tailorID';
 			</script>";
 	}
 }
@@ -30,6 +30,7 @@ if( isset($_POST["update"]) ) {
 </head>
 <body>
 	<h1>Update Data Tailor</h1>
+	<a href="../homePage.php">Back</a>
 	<form action="" method="post" enctype="multipart/form-data">
 		<ul>
 				<input type="hidden" name="id" value="<?php echo $tailor["tailorID"]; ?>">

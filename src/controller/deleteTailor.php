@@ -10,7 +10,7 @@ if( deleteTailor($tailorID) > 0 ) {
 } else {
 	echo "<script>
 			alert('data gagal dihapus!');
-			document.location.href = '../homePage.php';
+			document.location.href = 'deleteTailor.php';
 		</script>";
 }
 ?>
