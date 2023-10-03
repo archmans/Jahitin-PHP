@@ -6,11 +6,19 @@ if (!isset($_SESSION["login"])) {
 }
 
 require 'controller/functions.php';
-$tailor = query("select * from tailor");
 
 if( isset($_POST["search"]) ) {
 	$tailor = search($_POST["keyword"]);
 }
+
+// pagination
+$countDataperPage = 1;
+$countData = count(query("SELECT * FROM tailor"));
+$pages = ceil($countData / $countDataperPage);
+$activePage = (isset($_GET["page"])) ? $_GET["page"] : 1;
+$firstData = ($countDataperPage * $activePage) - $countDataperPage;
+
+$tailor = query("SELECT * FROM tailor LIMIT $firstData, $countDataperPage");
 
 ?>
 
@@ -32,11 +40,30 @@ if( isset($_POST["search"]) ) {
 
 <br><br>
 <form action="" method="post">
-	<input type="text" name="keyword" size="40" autofocus placeholder="input search keywords" autocomplete="off">
-	<button type="submit" name="search">Search</button>
+	<input type="text" name="keyword" size="40" autofocus placeholder="input search keywords" autocomplete="off" id="keyword">
+	<button type="submit" id="searchbutton" name="search">Search</button>
 </form>
 <br><br>
 
+<!-- navigation -->
+
+<?php if ( $activePage > 1 ) : ?>
+	<a href="?page=<?= $activePage - 1; ?>">&laquo;</a>
+<?php endif; ?>
+
+<?php for( $i = 1; $i <= $pages; $i++ ) : ?>
+	<?php if( $i == $activePage ) : ?>
+		<a href="?page=<?= $i; ?>" style="font-weight: bold; color: green;"><?= $i; ?></a>
+	<?php else : ?>
+		<a href="?page=<?= $i; ?>"><?= $i; ?></a>
+	<?php endif; ?>
+<?php endfor; ?>
+
+<?php if ( $activePage < $pages ) : ?>
+	<a href="?page=<?= $activePage + 1; ?>">&raquo;</a>
+<?php endif; ?>
+
+<div id="container">
 <table border="1" cellspacing="0" cellpadding="5">
 	<tr>
 		<th>No</th>
@@ -47,11 +74,6 @@ if( isset($_POST["search"]) ) {
 		<th>Picture</th>
 		<th>Video</th>
 	</tr>
-	<?php if (search($_POST["keyword"]) == null) { ?>
-	<tr>
-		<td colspan="7" align="center">Data not found</td>
-	</tr>
-	<?php } ?>
 	<?php $i = 1; ?>
 	<?php foreach( $tailor as $row ) { ?>
 	<tr>
@@ -70,6 +92,7 @@ if( isset($_POST["search"]) ) {
 	<?php $i++; ?>
 	<?php } ?>
 </table>
-
+</div>
+<script src="js/script.js"></script>
 </body>
 </html>
