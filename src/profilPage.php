@@ -5,7 +5,6 @@ if (!isset($_SESSION["login"])) {
 	exit;
 }
 
-require 'controller/functions.php';
 require 'controller/functionsUser.php';
 
 $id = $_SESSION["id"];
