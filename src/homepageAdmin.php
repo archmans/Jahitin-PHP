@@ -35,7 +35,7 @@ if( isset($_POST["search"]) ) {
         <ul>
             <li><a href="homePage.php" style="color:#279864">Tailor</a></li>
             <li><a href="manageUser.php">User</a></li>
-            <li><a href="logoutBackend.php">Logout</a></li>
+            <li><a href="backend/logout.php">Logout</a></li>
         </ul>
     </nav>
     <div class="search-container">
