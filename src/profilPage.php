@@ -28,31 +28,58 @@ if( isset($_POST["save"]) ) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Profil</title>
-	<style>
-		ul li { list-style: none; }
-	</style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles\homepage.css">
+    <link rel="stylesheet" href="styles\profilPage.css">
+
+    <title>Homepage User</title>
 </head>
 <body>
-	<h1>Profil</h1>
-	<a href="homePage.php">Back</a>
-	<form action="" method="post">
-		<ul>
-				<input type="hidden" name="id" value="<?php echo $user["id"]; ?>">
-				<input type="hidden" name="username" value="<?php echo $user["username"]; ?>">
-			<li>
-				<label for="email">Email : </label>
-				<input type="text" name="email" id="email" value="<?php echo $user["email"]; ?>">
-			</li>
-			<li>
-				<label for="password">Password : </label>
-				<input type="text" name="password" id="password" value="<?php echo $user["password"]; ?>">
-			</li>
-			<li>
-				<button type="submit" id="submit" name="save">save</button>
-			</li>
-		</ul>
-	</form>
+    <div class="back-container">
+        <a href="homePage.php">Back</a>
+    </div>
+    <div class="bangs">
+        <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
+    </div>
+    <nav>
+        <div class="logo">
+            <img src="assets\logo.png" alt="logo jahitin"/>
+        </div>
+        <ul>
+            <li><a href="homepageUser.php">Home</a></li>
+            <li><a href="profilePage.php" style="color: #279864">Profile</a></li>
+            <li><a href="logoutBackend.php">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="search-results" style="margin:0">
+        <div class="line">
+            <p>Your Profil <span id="search-term-text"></span></p>
+        </div>
+    </div>
+    <div class="container-profil">
+        <div class="card-profil">
+            <div class="foto-profil">
+                <img src="assets\user.png" alt="profil">
+            </div>
+            <form action="" method="post">
+            <ul>
+                    <input type="hidden" name="id" value="<?php echo $user["id"]; ?>">
+                    <input type="hidden" name="username" value="<?php echo $user["username"]; ?>">
+                <li>
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" value="<?php echo $user["email"]; ?>">
+                </li>
+                <li>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" value="<?php echo $user["password"]; ?>">
+                </li>
+                <li>
+                    <button type="submit" id="submit" name="save">save</button>
+                </li>
+            </ul>
+        </form>
+    </div>
 </body>
 </html>
