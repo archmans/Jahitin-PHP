@@ -30,7 +30,7 @@ if( isset($_POST["update"]) ) {
 </head>
 <body>
 	<h1>Update Review</h1>
-	<a href="../reviewPage.php">Back</a>
+	<a href="../reviewPage.php?id=<?php echo $penjahitID; ?>">Back</a>
 	<form action="" method="post" enctype="multipart/form-data">
 		<ul>
 				<input type="hidden" name="id" value="<?php echo $review["reviewID"]; ?>">

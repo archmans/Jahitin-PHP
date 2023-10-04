@@ -1,18 +1,18 @@
 <?php 
 require 'functionsReview.php';
 
-$id = $_GET["id"];
+$penjahitID = $_GET["id"];
 
 if( isset($_POST["tambah"]) ) {
 	if( addReview($_POST) > 0 ) {
 		echo "<script>
 				alert('data berhasil ditambahkan!');
-				document.location.href = '../reviewPage.php';
+				document.location.href = '../reviewPage.php?id=$penjahitID';
             </script>";
 	} else {
 		echo "<script>
 				alert('data gagal ditambahkan!');
-				document.location.href = '../reviewPage.php';
+				document.location.href = 'addReview.php?id=$penjahitID';
 		</script>";
 	}
 }
@@ -28,7 +28,7 @@ if( isset($_POST["tambah"]) ) {
 </head>
 <body>
 	<h1>Tambah Data Tailor</h1>
-	<a href="../reviewPage.php">Back</a>
+	<a href="../reviewPage.php?id=<?php echo $penjahitID; ?>">Back</a>
 	<form action="" method="post" enctype="multipart/form-data">
 		<ul>
 			<input type="hidden" name="id" id="id" value="<?= $id; ?>">
