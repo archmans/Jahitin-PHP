@@ -21,12 +21,15 @@
             </div>
             <div class="input-group">
                 <input type="text" placeholder="Username" id='username' name="username" required>
+                <span id="errorMsgUsername"></span>
             </div>
             <div class="input-group">
                 <input type="email" placeholder="Email" name="email" id='email' required>
+                <span id="errorMsgEmail"></span>
             </div>
             <div class="input-group">
                 <input type="password" placeholder="Password" id='password' name="password" required>
+                <span id="errorMsgPassword"></span>
             </div>
             <div class="input-group">
                 <button type="submit" id='submit' name="register" class="btn">Register</button>
@@ -34,5 +37,6 @@
             <p class="login-register-text">Already Have an Account? <a href="loginPage.php">Login Here</a>.</p>
         </form>
     </div>
+    <script src="js/register.js"></script>
 </body>
 </html>
