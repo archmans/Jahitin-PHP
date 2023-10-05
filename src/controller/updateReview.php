@@ -1,4 +1,10 @@
-<?php 
+<?php
+session_start();
+if (!isset($_SESSION["login"])) {
+	header("location: loginPage.php");
+	exit;
+}
+
 require 'functionsReview.php';
 
 $reviewID = $_GET["id"];
@@ -27,57 +33,75 @@ if( isset($_POST["update"]) ) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="..\styles\homepage.css">
-    <link rel="stylesheet" href="..\styles\addTailor.css">
+    <link rel="stylesheet" href="..\styles\addUpdateForm.css">
 </head>
 <body>
-	<div class="back-container">
-		<a href=../reviewPage.php">Back</a>
-	</div>
-	<div class="bangs">
-		<p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
-	</div>
-	<nav>
-		<div class="logo">
-			<img src="..\assets\logo.png" alt="logo jahitin"/>
-		</div>
-		<ul>
-			<li><a href="homePage.php">Home</a></li>
-			<li><a href="profilePage.php">Profile</a></li>
-			<li><a href="logoutBackend.php">Logout</a></li>
-		</ul>
-	</nav>
-	<div class="search-results" style="margin-top: 0rem">
-		<div class="line">
-			<p>Update Review<span id="search-term-text"></span></p>
-		</div>
-	</div>
-	<div class="container-tailor">
-        <div class="card-tailor">
+<div class="bangs">
+        <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
+    </div>
+    <nav>
+        <div class="nav-left">
+			<?php if ($_SESSION['username'] != 'admin') { ?>
+				<a href="..\homepageAdmin.php">Back</a>
+			<?php } else { ?>
+				<a href="..\homepageUser.php">Back</a>
+			<?php } ?>
+        </div>
+        <div class="logo">
+            <img src="..\assets\logo.png" alt="logo jahitin"/>
+        </div>
+        <div class="nav-right">
+            <ul>
+				<?php if ($_SESSION['username'] != 'admin') { ?>
+					<li><a href="..\homepageAdmin.php">Tailor</a></li>
+					<li><a href="..\manageUser.php">User</a></li>
+					<li><a href="..\backend\logoutBackend.php">Logout</a></li>
+				<?php } else { ?>
+					<li><a href="..\homepageUser.php">Home</a></li>
+					<li><a href="..\profilPage.php">Profile</a></li>
+					<li><a href="..\backend\logoutBackend.php">Logout</a></li>
+				<?php } ?>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-title">
+        <div class="line-left"></div>
+        <div class="title">
+            <p>Update Review</p>
+        </div>
+        <div class="line-right"></div>
+    </div>
+	<div class="container-form">
+        <div class="card-form">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul>
-						<input type="hidden" name="id" value="<?php echo $review["reviewID"]; ?>">
-						<input type="hidden" name="penjahitID" value="<?php echo $review["penjahitID"]; ?>">
-						<input type="hidden" name="oldFoto" value="<?php echo $review["foto_ulasan"]; ?>">
-						<input type="hidden" name="oldVideo" value="<?php echo $review["video_ulasan"]; ?>">
-					<li>
-						<label for="ulasan">Ulasan : </label>
-						<input type="text" name="ulasan" id="ulasan" value="<?php echo $review["ulasan"]; ?>">
-					</li>
-					<li>
-						<label for="foto_ulasan">Picture : </label>
-						<img src="../img/<?= $review["foto_ulasan"]; ?>" width="100"></img>
-						<br>
-						<input type="file" name="foto_ulasan" id="foto_ulasan">
-					</li>
-					<br>
-					<li>
-						<label for="video_ulasan">Video : </label>
-						<video src="../vid/<?= $review["video_ulasan"]; ?>" width="100">
-						</video><br>
-						<input type="file" name="video_ulasan" id="video_ulasan">
-					</li>
-					<li>
-						<button type="submit" id="submit" name="update">Update Review</button>
+					<input type="hidden" name="id" value="<?php echo $review["reviewID"]; ?>">
+					<input type="hidden" name="penjahitID" value="<?php echo $review["penjahitID"]; ?>">
+					<input type="hidden" name="oldFoto" value="<?php echo $review["foto_ulasan"]; ?>">
+					<input type="hidden" name="oldVideo" value="<?php echo $review["video_ulasan"]; ?>">
+					<div class="form-input">
+						<li>
+							<label for="ulasan">Ulasan : </label>
+							<textarea type="text" name="ulasan" id="ulasan" value="<?php echo $review["ulasan"]; ?>"></textarea>
+						</li>
+						<div class="form-media">
+							<li>
+								<label for="foto_ulasan">Picture : </label>
+								<img src="../img/<?= $review["foto_ulasan"]; ?>" width="100"></img>
+								<br>
+								<input type="file" name="foto_ulasan" id="foto_ulasan">
+							</li>
+							<br>
+							<li>
+								<label for="video_ulasan">Video : </label>
+								<video src="../vid/<?= $review["video_ulasan"]; ?>" width="100">
+								</video><br>
+								<input type="file" name="video_ulasan" id="video_ulasan">
+							</li>
+							<li>
+						</div>
+					</div>
+						<button type="submit" id="submit" name="tambah">Update Review</button>
 					</li>
 				</ul>
 			</form>
