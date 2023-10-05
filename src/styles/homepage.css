@@ -79,6 +79,18 @@ nav ul li a {
     align-items: center;
 }
 
+.arrow-left-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.arrow-left-button:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease;
+}
+
 .nav-left a {
     color: #000;
     font-size: 1.25rem;
@@ -262,6 +274,11 @@ nav ul il a.active, nav ul li a:hover {
     }
     .nav-left {
         position: absolute;
+    }
+    .logo {
+        padding-left: 0;
+        margin-right: 4rem;
+
     }
 }
 

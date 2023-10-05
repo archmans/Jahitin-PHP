@@ -31,9 +31,6 @@ if( isset($_POST["search"]) ) {
         <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
     </div>
     <nav>
-        <div class="nav-left">
-            <a href="homepageUser.php">Back</a>
-        </div>
         <div class="logo">
             <img src="assets\logo.png" alt="logo jahitin"/>
         </div>
@@ -74,7 +71,7 @@ if( isset($_POST["search"]) ) {
     <div class="container-title">
         <div class="line-left"></div>
         <div class="title">
-            <p>Search Result</p>
+            <p>Our Tailor</p>
         </div>
         <div class="line-right"></div>
     </div>
@@ -106,7 +103,7 @@ if( isset($_POST["search"]) ) {
                                     <div class="popup">
                                         <h2><?= $row["nama"]; ?></h2>
                                         <div class="content">
-                                            <video src="vid/<?= $row["video_tailor"]; ?>" controls></video>
+                                            <video src="vid/<?= $row["video_tailor"]; ?>" style="max-height: 450px;" controls></video>
                                         </div>
                                     </div>
                                 </div>
@@ -118,6 +115,13 @@ if( isset($_POST["search"]) ) {
             <?php } ?>
         </ul>
     </div>
+
+    <style>
+    .logo {
+        padding-left: 3rem;
+    }
+
+</style>
     
 
 
