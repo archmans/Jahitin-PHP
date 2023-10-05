@@ -1,5 +1,5 @@
 <?php
-$server = "localhost:3307";
+$server = "localhost";
 $username = "root";
 $password = "";
 $database = "jahitin";
@@ -66,19 +66,6 @@ function uploadGambar($parameter) {
     $path = '../img/' . $namaFileBaru;
 
     move_uploaded_file($tmpName, $path);
-
-    list($width, $height) = getimagesize($path);
-    $size = min($width, $height);
-    $x = ($width - $size) / 2;
-    $y = ($height - $size) / 2;
-
-    $source = imagecreatefromjpeg($path);
-    $dest = imagecreatetruecolor($size, $size);
-    imagecopyresized($dest, $source, 0, 0, $x, $y, $size, $size, $size, $size);
-
-    imagejpeg($dest, $path);
-    imagedestroy($source);
-    imagedestroy($dest);
 
     return $namaFileBaru;
 }
