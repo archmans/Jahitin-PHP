@@ -32,49 +32,63 @@ if( isset($_POST["tambah"]) ) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="..\styles\homepage.css">
-    <link rel="stylesheet" href="..\styles\addReview.css">
+    <link rel="stylesheet" href="..\styles\addUpdateForm.css">
 
 </head>
 <body>
-	<div class="back-container">
-		<a href="../reviewPage.php">Back</a>
-	</div>
 	<div class="bangs">
-		<p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
-	</div>
-	<nav>
-		<div class="logo">
-			<img src="..\assets\logo.png" alt="logo jahitin"/>
-		</div>
-		<ul>
-			<li><a href="..\homepageUser.php">Home</a></li>
-			<li><a href="profilePage.php">Profile</a></li>
-			<li><a href="logoutBackend.php">Logout</a></li>
-		</ul>
-	</nav>
-	<div class="search-results" style="margin-top: 0rem">
-		<div class="line">
-			<p>Add Review Tailor<span id="search-term-text"></span></p>
-		</div>
-	</div>
-	<div class="container-review">
-        <div class="card-review">
+        <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
+    </div>
+    <nav>
+        <div class="nav-left">
+            <a href="..\reviewPage.php">Back</a>
+        </div>
+        <div class="logo">
+            <img src="..\assets\logo.png" alt="logo jahitin"/>
+        </div>
+        <div class="nav-right">
+            <ul>
+				<?php if ($_SESSION['username'] != 'admin') { ?>
+					<li><a href="homepageAdmin.php">Tailor</a></li>
+					<li><a href="manageUser.php">User</a></li>
+					<li><a href="logoutBackend.php">Logout</a></li>
+				<?php } else { ?>
+					<li><a href="homepageUser.php">Home</a></li>
+					<li><a href="profilPage.php">Profile</a></li>
+					<li><a href="logoutBackend.php">Logout</a></li>
+				<?php } ?>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-title">
+        <div class="line-left"></div>
+        <div class="title">
+            <p>Add Review</p>
+        </div>
+        <div class="line-right"></div>
+    </div>
+	<div class="container-form">
+        <div class="card-form">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul>
 					<input type="hidden" name="id" id="id" value="<?= $id; ?>">
-					<li>
-						<label for="ulasan">Ulasan : </label>
-						<textarea type="text" name="ulasan" id="ulasan"></textarea>
-					</li>
-					<li>
-						<label for="foto_ulasan">Foto : </label>
-						<input type="file" name="foto_ulasan" id="foto_ulasan">
-					</li>
-					<li>
-						<label for="video_ulasan">Video : </label>
-						<input type="file" name="video_ulasan" id="video_ulasan">
-					</li>
-					<li>
+					<div class="form-input">
+						<li>
+							<label for="ulasan">Ulasan : </label>
+							<textarea type="text" name="ulasan" id="ulasan"></textarea>
+						</li>
+						<div class="form-media">
+							<li>
+								<label for="foto_ulasan">Foto : </label>
+								<input type="file" name="foto_ulasan" id="foto_ulasan">
+							</li>
+							<li>
+								<label for="video_ulasan">Video : </label>
+								<input type="file" name="video_ulasan" id="video_ulasan">
+							</li>
+							<li>
+						</div>
+					</div>
 						<button type="submit" id="submit" name="tambah">Add Review</button>
 					</li>
 				</ul>
