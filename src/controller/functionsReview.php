@@ -52,14 +52,26 @@ function uploadGambar($parameter) {
 		return false;
 	}
 
-	$namaFileBaru = uniqid();
-	$namaFileBaru .= '.';
-	$namaFileBaru .= $ekstensiGambar;
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
 
-	var_dump($namaFileBaru);
+    $path = '../img/' . $namaFileBaru;
 
-	move_uploaded_file($tmpName, '../img/' . $namaFileBaru);
-	return $namaFileBaru;
+    move_uploaded_file($tmpName, $path);
+
+    list($width, $height) = getimagesize($path);
+    $size = min($width, $height);
+    $x = ($width - $size) / 2;
+    $y = ($height - $size) / 2;
+
+    $source = imagecreatefromjpeg($path);
+    $dest = imagecreatetruecolor($size, $size);
+    imagecopyresized($dest, $source, 0, 0, $x, $y, $size, $size, $size, $size);
+
+    imagejpeg($dest, $path);
+    imagedestroy($source);
+    imagedestroy($dest);
 }
 
 function uploadVid($parameter) {
@@ -95,7 +107,6 @@ function uploadVid($parameter) {
 	$namaFileBaru = uniqid();
 	$namaFileBaru .= '.';
 	$namaFileBaru .= $ekstensiVideo;
-	var_dump($namaFileBaru);
 
 	move_uploaded_file($tmpName, '../vid/' . $namaFileBaru);
 	return $namaFileBaru;
