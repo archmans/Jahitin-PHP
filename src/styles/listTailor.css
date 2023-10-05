@@ -1,0 +1,284 @@
+.search-results-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.tailor-list {
+    list-style: none;
+    margin-bottom: 5rem;
+    justify-content: center;
+}
+
+.tailor-item {
+    display: flex;
+    /* border: 0.2rem solid #000; */
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tailor-card {
+    display: flex;
+    border: 0.3rem solid #279864;
+    border-radius: 1rem;
+    background: rgb(255, 255, 255, 0.7);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* .tailor-counter {
+    border: 0.3rem solid #279864;
+    border-radius: 1rem 0 0 1rem;
+    background: rgb(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: #279864;
+    font-weight: bold;
+    padding: 0 2rem 0 2rem;
+    margin-right: 1rem;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+} */
+
+.tailor-media {
+    display: flex;
+    align-items: flex-start;
+    width: 300px;
+    height: 400px;
+    background: rgb(203, 198, 198, 0.5);
+
+}
+
+img.tailor-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+
+}
+
+.tailor-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 1rem 2rem;
+    width: 30rem;
+}
+
+h2.tailor-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+p.tailor-address, 
+p.tailor-category {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0 1rem 1rem 0;
+}
+
+/* .tailor-actions a {
+    text-decoration: none;
+    color: blue;
+    display: block;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+
+} */
+
+a.button {
+    font-size: 1rem;
+    color: #279864;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button.active .button:hover {
+    color: #279864;
+    transition: all 0.5s ease; 
+}
+  
+.overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9999999;
+
+
+}
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .container-popUp {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .popup {
+    /* margin: auto; */
+    background: transparent;
+    width: 100%;
+    height: auto;
+    position: relative;
+
+  }
+  
+  .popup h2 {
+    margin: 2rem 0 2rem 0;
+    color: #f1f1f1;
+    font-weight: 600;
+  }
+
+.close {
+    display: flex;
+    width: 100%;
+    height: 30%;
+    flex-direction: row-reverse;
+
+
+  }
+
+ .x {
+    transition: all 200ms;
+    font-size: 4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #279864;
+    margin: 5rem 2rem 0 0;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    max-height: 100%;
+    overflow: auto;
+  }
+
+  .tailor-actions {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 3.5rem;
+}
+
+.tailor-actions .update, 
+.tailor-actions .review{
+    color: #279864;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 1rem 1rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.tailor-actions .delete{
+    color: #820404;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 1rem 2rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* hover */
+.tailor-actions .update:hover,
+.tailor-actions .delete:hover,
+.tailor-actions .review:hover {
+    transform: scale(1.1);
+    transition: all 0.5s ease; 
+}
+
+@media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
+
+@media (max-width: 1324px) {
+    .search {
+        flex-direction: column;
+        align-items: center;
+    }
+    .search-input {
+        width: 90%;
+        margin: 0 0rem 1rem 0rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .tailor-item {
+        flex-direction: column-reverse;
+        align-items: center;
+        display: flex;
+    }
+
+    .tailor-card {
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+    }
+
+    .tailor-media {
+        display: flex;
+        justify-content: center
+    }
+
+    .tailor-media,
+    .tailor-info,
+    .tailor-actions {
+        flex-basis: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .tailor-media img,
+    .tailor-media video {
+        width: 100%;
+        height: auto;
+    }
+    .btn {
+        width: 4rem;
+        height: 2rem;
+        margin: 0 0.5rem;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 580px) {
+    .tailor-card {
+        width: 320px;
+    }
+
+    .tailor-media {
+        display: flex;
+        justify-content: center
+    }
+
+}
