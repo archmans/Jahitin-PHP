@@ -25,9 +25,6 @@ $user = query("select * from users");
         <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
     </div>
     <nav>
-        <div class="nav-left">
-            <a href="homepageAdmin.php">Back</a>
-        </div>
         <div class="logo">
             <img src="assets\logo.png" alt="logo jahitin"/>
         </div>
@@ -81,7 +78,13 @@ $user = query("select * from users");
 			</tbody>
 		</table>
 	</div>
-
-
 </body>
+
+<style>
+    .logo {
+        padding-left: 3rem;
+    }
+
+</style>
+
 </html>
