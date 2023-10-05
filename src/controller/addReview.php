@@ -41,14 +41,16 @@ if( isset($_POST["tambah"]) ) {
     </div>
     <nav>
         <div class="nav-left">
-			<a href="..\reviewPage.php?id=<?= $id; ?>">Back</a>
+			<a href="..\reviewPage.php?id=<?= $id; ?>" class="arrow-left-button">
+				<img src="..\assets\arrow-left-32.png" alt="arrow-left"/>
+			</a>
         </div>
         <div class="logo">
             <img src="..\assets\logo.png" alt="logo jahitin"/>
         </div>
         <div class="nav-right">
             <ul>
-				<?php if ($_SESSION['username'] != 'admin') { ?>
+				<?php if ($_SESSION['username'] == 'admin') { ?>
 					<li><a href="homepageAdmin.php">Tailor</a></li>
 					<li><a href="manageUser.php">User</a></li>
 					<li><a href="logoutBackend.php">Logout</a></li>

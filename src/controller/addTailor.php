@@ -39,8 +39,10 @@ if( isset($_POST["tambah"]) ) {
         <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
     </div>
     <nav>
-        <div class="nav-left">
-            <a href="..\homepageAdmin.php">Back</a>
+		<div class="nav-left">
+			<a href="..\homepageAdmin.php" class="arrow-left-button">
+				<img src="..\assets\arrow-left-32.png" alt="arrow-left"/>
+			</a>
         </div>
         <div class="logo">
             <img src="..\assets\logo.png" alt="logo jahitin"/>
@@ -104,5 +106,22 @@ if( isset($_POST["tambah"]) ) {
 		</div>
 	</div>
 </body>
+
+<style>
+	@media (max-width: 500px) {
+		input#nama, 
+		input#alamat, 
+		input#jenis {
+			width: 17rem;
+		}
+		.card-form {
+			padding: 1rem 0.5rem 2rem 0.5rem;
+		}
+		.container-form {
+			width: auto;
+		}
+	}
+
+</style>
 
 </html>
