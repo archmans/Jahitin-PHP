@@ -94,16 +94,16 @@ if( isset($_POST["search"]) ) {
                             <h5>Review</h5>
                             <a class="button" href="reviewPage.php?id=<?php echo $row["tailorID"]; ?>">Tailor's Review</a>
                             <h5>Karya</h5>
-                            <a class="button" href="#popup1">Video Karya Penjahit</a>
-                            <div id="popup1" class="overlay">
+                            <a class="button" href="#popup<?= $i ?>">Video Karya Penjahit</a>
+                            <div id="popup<?= $i ?>" class="overlay">
                                 <div class="container-popUp">
                                     <div class="close">
-                                        <a class="x" href="#">&times;</a>
+                                        <a class="x" href="" onclick="closePopup(<?= $i ?>)">&times;</a>
                                     </div>
                                     <div class="popup">
                                         <h2><?= $row["nama"]; ?></h2>
                                         <div class="content">
-                                            <video src="vid/<?= $row["video_tailor"]; ?>" style="max-height: 450px;" controls></video>
+                                            <video src="vid/<?= $row["video_tailor"]; ?>" id="vid<?= $i ?>" style="max-height: 450px;" controls></video>
                                         </div>
                                     </div>
                                 </div>
@@ -122,7 +122,6 @@ if( isset($_POST["search"]) ) {
     }
 
 </style>
-    
-
-
+        <script src="js\popUpVideo.js"></script>
 </body>
+</html>
