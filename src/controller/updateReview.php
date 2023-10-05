@@ -101,7 +101,7 @@ if( isset($_POST["update"]) ) {
 							<li>
 						</div>
 					</div>
-						<button type="submit" id="submit" name="tambah">Update Review</button>
+						<button type="submit" id="submit" name="update">Update Review</button>
 					</li>
 				</ul>
 			</form>
