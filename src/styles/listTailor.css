@@ -119,13 +119,14 @@ a.button {
     visibility: hidden;
     opacity: 0;
     z-index: 9999999;
-
+    display: flex;
 
 }
 
 .overlay:target {
     visibility: visible;
     opacity: 1;
+    overflow: auto;
 }
 
 .container-popUp {
@@ -133,6 +134,7 @@ a.button {
     display: flex;
     text-align: center;
     flex-direction: column;
+    align-items: center
 }
   
 .popup {
@@ -164,7 +166,7 @@ a.button {
     font-weight: bold;
     text-decoration: none;
     color: #279864;
-    margin: 5rem 2rem 0 0;
+    margin: 1rem 2rem 0 0;
 }
 
 .popup .close:hover {
@@ -174,6 +176,7 @@ a.button {
 .popup .content {
     max-height: 100%;
     overflow: auto;
+    padding-bottom: 7rem;
 }
 
 .tailor-actions {
