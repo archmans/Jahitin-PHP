@@ -37,26 +37,30 @@ if( isset($_POST["save"]) ) {
     <title>Homepage User</title>
 </head>
 <body>
-    <div class="back-container">
-        <a href="homePage.php">Back</a>
-    </div>
     <div class="bangs">
         <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
     </div>
     <nav>
+        <div class="nav-left">
+            <a href="homepageUser.php">Back</a>
+        </div>
         <div class="logo">
             <img src="assets\logo.png" alt="logo jahitin"/>
         </div>
-        <ul>
-            <li><a href="homepageUser.php">Home</a></li>
-            <li><a href="profilePage.php" style="color: #279864">Profile</a></li>
-            <li><a href="logoutBackend.php">Logout</a></li>
-        </ul>
-    </nav>
-    <div class="search-results" style="margin:0">
-        <div class="line">
-            <p>Your Profil <span id="search-term-text"></span></p>
+        <div class="nav-right">
+            <ul>
+                <li><a href="homepageUser.php">Home</a></li>
+                <li><a href="profilPage.php" style="color: #279864">Profile</a></li>
+                <li><a href="logoutBackend.php">Logout</a></li>
+            </ul>
         </div>
+    </nav>
+    <div class="container-title">
+        <div class="line-left"></div>
+        <div class="title">
+            <p>Your Profile</p>
+        </div>
+        <div class="line-right"></div>
     </div>
     <div class="container-profil">
         <div class="card-profil">
@@ -76,7 +80,7 @@ if( isset($_POST["save"]) ) {
                     <input type="password" name="password" id="password" value="<?php echo $user["password"]; ?>">
                 </li>
                 <li>
-                    <button type="submit" id="submit" name="save">save</button>
+                    <button type="submit" id="submit" name="save">Save</button>
                 </li>
             </ul>
         </form>
