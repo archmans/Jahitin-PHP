@@ -40,19 +40,17 @@ if( isset($_POST["update"]) ) {
         <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
     </div>
     <nav>
-        <div class="nav-left">
-			<?php if ($_SESSION['username'] != 'admin') { ?>
-				<a href="..\homepageAdmin.php">Back</a>
-			<?php } else { ?>
-				<a href="..\homepageUser.php">Back</a>
-			<?php } ?>
+		<div class="nav-left">
+			<a href="..\reviewPage.php?id=<?= $id; ?>" class="arrow-left-button">
+				<img src="..\assets\arrow-left-32.png" alt="arrow-left"/>
+			</a>
         </div>
         <div class="logo">
             <img src="..\assets\logo.png" alt="logo jahitin"/>
         </div>
         <div class="nav-right">
             <ul>
-				<?php if ($_SESSION['username'] != 'admin') { ?>
+				<?php if ($_SESSION['username'] == "admin") { ?>
 					<li><a href="..\homepageAdmin.php">Tailor</a></li>
 					<li><a href="..\manageUser.php">User</a></li>
 					<li><a href="..\backend\logoutBackend.php">Logout</a></li>
@@ -129,6 +127,9 @@ if( isset($_POST["update"]) ) {
 		}
 		.card-form {
 			padding: 1rem 0rem 2rem 0rem;
+		}
+		.logo img {
+			padding-left: 2rem;
 		}
 	}
 </style>

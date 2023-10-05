@@ -38,17 +38,19 @@ if( isset($_POST["update"]) ) {
         <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
     </div>
     <nav>
-        <div class="nav-left">
-            <a href="..\homepageAdmin.php">Back</a>
+		<div class="nav-left">
+			<a href="..\homepageAdmin.php" class="arrow-left-button">
+				<img src="..\assets\arrow-left-32.png" alt="arrow-left"/>
+			</a>
         </div>
         <div class="logo">
             <img src="..\assets\logo.png" alt="logo jahitin"/>
         </div>
         <div class="nav-right">
             <ul>
-                <li><a href="homepageUser.php">Home</a></li>
-                <li><a href="profilPage.php">Profile</a></li>
-                <li><a href="logoutBackend.php">Logout</a></li>
+				<li><a href="homepageAdmin.php">Tailor</a></li>
+				<li><a href="manageUser.php">User</a></li>
+				<li><a href="logoutBackend.php">Logout</a></li>
             </ul>
         </div>
     </nav>
