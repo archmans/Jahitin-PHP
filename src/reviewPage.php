@@ -13,7 +13,7 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<title>Halaman Review</title>
 	<meta charset="UTF-8" />
@@ -24,31 +24,44 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 </head>
 
 <body>
-	<div class="back-container">
-		<a href="homePage.php">Back</a>
-	</div>
 	<div class="bangs">
-		<p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
-	</div>
-	<nav>
-		<div class="logo">
-			<img src="assets\logo.png" alt="logo jahitin"/>
-		</div>
-		<ul>
-			<li><a href="homepageAdmin.php">Tailor</a></li>
-			<li><a href="manageUser.php">User</a></li>
-			<li><a href="logoutBackend.php">Logout</a></li>
-		</ul>
-	</nav>
-	<div class="search-results" style="margin-top: 0rem">
-		<div class="line">
-			<p>Tailor's Review <span id="search-term-text"></span></p>
-		</div>
-	</div>
+        <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
+    </div>
+    <nav>
+        <div class="nav-left">
+			<?php if ($_SESSION['username'] != 'admin') { ?>
+				<a href="homepageAdmin.php">Back</a>
+			<?php } else { ?>
+				<a href="homepageUser.php">Back</a>
+			<?php } ?>
+        </div>
+        <div class="logo">
+            <img src="assets\logo.png" alt="logo jahitin"/>
+        </div>
+        <div class="nav-right">
+			<ul>
+			<?php if ($_SESSION['username'] != 'admin') { ?>
+				<li><a href="homepageAdmin.php">Tailor</a></li>
+                <li><a href="manageUser.php">User</a></li>
+                <li><a href="logoutBackend.php">Logout</a></li>
+			<?php } else { ?>
+				<li><a href="homepageUser.php">Home</a></li>
+                <li><a href="profilPage.php">Profile</a></li>
+                <li><a href="logoutBackend.php">Logout</a></li>
+			<?php } ?>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-title">
+        <div class="line-left"></div>
+        <div class="title">
+            <p>Tailor's Reviews</p>
+        </div>
+        <div class="line-right"></div>
+    </div>
 	<div class="add">
 		<a href="controller/addReview.php?id=<?php echo $idPenjahit; ?>"> + Add Review</a>
 	</div>
-
 	<div class="styled-container">
 		<?php if ($review == null) { ?>
 			<div class="styled-item" align="center">Review not found</div>
@@ -58,14 +71,14 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 			<div class="card-review">
 				<div class="container-review-all">
 					<div class="container-foto">
-						<img src="assets/user.png" style="height: 30px">
+						<img alt="profil-user" src="assets/user.png" style="height: 30px">
 					</div>
 					<div class="container-review">
 						<p class="user"> anonymous </p>
 						<div class="isi-ulasan"><?= $row["ulasan"]; ?></div>
 						<div class="media-ulasan">
-							<img src="img/<?= $row["foto_ulasan"]; ?>" style="height: 100px; max-width=30px">
-							<video src="vid/<?= $row["video_ulasan"]; ?>" style="height: 100px" controls>
+							<img alt="foto-ulasan" src="img/<?= $row["foto_ulasan"]; ?>" style="height: 100px; max-width: 200px">
+							<video alt="video-ulasan" src="vid/<?= $row["video_ulasan"]; ?>" style="height: 100px; max-width: 200px" controls>
 						</div>
 						<div class="aksi">
 							<a class="update" href="controller/updateReview.php?id=<?php echo $row["reviewID"]; ?>">Update</a> 
