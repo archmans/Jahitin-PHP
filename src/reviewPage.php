@@ -29,10 +29,14 @@ $review = query("select * from review where penjahitID = $idPenjahit");
     </div>
     <nav>
         <div class="nav-left">
-			<?php if ($_SESSION['username'] != 'admin') { ?>
-				<a href="homepageAdmin.php">Back</a>
+			<?php if ($_SESSION['username'] == 'admin') { ?>
+				<a href="homepageAdmin.php" class="arrow-left-button">
+					<img src="assets\arrow-left-32.png" alt="arrow-left"/>
+				</a>
 			<?php } else { ?>
-				<a href="homepageUser.php">Back</a>
+				<a href="homepageUser.php" class="arrow-left-button">
+					<img src="assets\arrow-left-32.png" alt="arrow-left"/>
+				</a>
 			<?php } ?>
         </div>
         <div class="logo">
@@ -40,7 +44,7 @@ $review = query("select * from review where penjahitID = $idPenjahit");
         </div>
         <div class="nav-right">
 			<ul>
-			<?php if ($_SESSION['username'] != 'admin') { ?>
+			<?php if ($_SESSION['username'] == 'admin') { ?>
 				<li><a href="homepageAdmin.php">Tailor</a></li>
                 <li><a href="manageUser.php">User</a></li>
                 <li><a href="logoutBackend.php">Logout</a></li>
@@ -92,8 +96,5 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 			<?php $i++; ?>
 		<?php } ?>
 	</div>
-
-
-
 </body>
 </html>
