@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
             $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['email'] = $row['email'];
-            header("location: ../homePage.php");
+            header("location: ../homepageUser.php");
             exit;
         } else {
             echo "<script>
