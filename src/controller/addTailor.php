@@ -10,7 +10,7 @@ if( isset($_POST["tambah"]) ) {
 	if( addTailor($_POST) > 0 ) {
 		echo "<script>
 				alert('data berhasil ditambahkan!');
-				document.location.href = '../homePage.php';
+				document.location.href = '../homepageAdmin.php';
             </script>";
 	} else {
 		echo "<script>
@@ -64,10 +64,6 @@ if( isset($_POST["tambah"]) ) {
         <div class="card-form">
 			<form action="" method="post" enctype="multipart/form-data">
 				<ul>
-					<input type="hidden" name="id" value="<?php echo $review["reviewID"]; ?>">
-					<input type="hidden" name="penjahitID" value="<?php echo $review["penjahitID"]; ?>">
-					<input type="hidden" name="oldFoto" value="<?php echo $review["foto_ulasan"]; ?>">
-					<input type="hidden" name="oldVideo" value="<?php echo $review["video_ulasan"]; ?>">
 					<div class="form-input" style="flex-direction: column">
 						<div class="form-input-text">
 							<li>
