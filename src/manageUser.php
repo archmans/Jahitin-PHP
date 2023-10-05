@@ -21,27 +21,31 @@ $user = query("select * from users");
 	<link rel="stylesheet" href="styles\manageUser.css">
 </head>
 <body>
-	<div class="back-container">
-		<a href="homepageAdmin.php">Back</a>
-	</div>
 	<div class="bangs">
-		<p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
-	</div>
-	<nav>
-		<div class="logo">
-			<img src="assets\logo.png" alt="logo jahitin"/>
-		</div>
-		<ul>
-			<li><a href="homepageAdmin.php">Tailor</a></li>
-			<li><a href="manageUser.php" style="color: #279864">User</a></li>
-			<li><a href="logoutBackend.php">Logout</a></li>
-		</ul>
-	</nav>
-	<div class="search-results" style="margin-top: 0rem">
-		<div class="line">
-			<p>Manage User<span id="search-term-text"></span></p>
-		</div>
-	</div>
+        <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
+    </div>
+    <nav>
+        <div class="nav-left">
+            <a href="homepageUser.php">Back</a>
+        </div>
+        <div class="logo">
+            <img src="assets\logo.png" alt="logo jahitin"/>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="homepageAdmin.php">Tailor</a></li>
+                <li><a href="manageUser.php" style="color: #279864">User</a></li>
+                <li><a href="logout.php">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+	<div class="container-title">
+        <div class="line-left"></div>
+        <div class="title">
+            <p>Manage User</p>
+        </div>
+        <div class="line-right"></div>
+    </div>
 	<div class="styled-table-container">
 		<table class="styled-table">
 			<thead>
