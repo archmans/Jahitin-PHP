@@ -122,22 +122,20 @@ a.button {
 
 
 }
-  .overlay:target {
+
+.overlay:target {
     visibility: visible;
     opacity: 1;
-  }
+}
 
-  .container-popUp {
+.container-popUp {
     width: 100%;
-    height: 100%;
     display: flex;
     text-align: center;
-    align-items: center;
     flex-direction: column;
-  }
+}
   
-  .popup {
-    /* margin: auto; */
+.popup {
     background: transparent;
     width: 100%;
     height: auto;
@@ -145,11 +143,11 @@ a.button {
 
   }
   
-  .popup h2 {
+.popup h2 {
     margin: 2rem 0 2rem 0;
     color: #f1f1f1;
     font-weight: 600;
-  }
+}
 
 .close {
     display: flex;
@@ -160,23 +158,25 @@ a.button {
 
   }
 
- .x {
+.x {
     transition: all 200ms;
     font-size: 4rem;
     font-weight: bold;
     text-decoration: none;
     color: #279864;
     margin: 5rem 2rem 0 0;
-  }
-  .popup .close:hover {
+}
+
+.popup .close:hover {
     color: #06D85F;
-  }
-  .popup .content {
+}
+
+.popup .content {
     max-height: 100%;
     overflow: auto;
-  }
+}
 
-  .tailor-actions {
+.tailor-actions {
     display: flex;
     width: 100%;
     flex-direction: row;
@@ -200,7 +200,7 @@ a.button {
     font-size: 1.5rem;
     font-weight: 500;
     text-decoration: none;
-    margin: 1rem 2rem;
+    margin: 1rem 1rem;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -243,6 +243,7 @@ a.button {
         flex-direction: column;
         align-items: center;
         display: flex;
+        padding: 1rem;
     }
 
     .tailor-media {
@@ -253,16 +254,10 @@ a.button {
     .tailor-media,
     .tailor-info,
     .tailor-actions {
-        flex-basis: 100%;
         max-width: 100%;
         text-align: center;
     }
 
-    .tailor-media img,
-    .tailor-media video {
-        width: 100%;
-        height: auto;
-    }
     .btn {
         width: 4rem;
         height: 2rem;
@@ -279,6 +274,12 @@ a.button {
     .tailor-media {
         display: flex;
         justify-content: center
+    }
+
+    .tailor-actions .update, 
+    .tailor-actions .review,
+    .tailor-actions .delete{
+        font-size: 1.2rem;
     }
 
 }

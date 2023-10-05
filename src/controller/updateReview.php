@@ -101,11 +101,35 @@ if( isset($_POST["update"]) ) {
 							<li>
 						</div>
 					</div>
-						<button type="submit" id="submit" name="tambah">Update Review</button>
+						<button type="submit" id="submit" name="update">Update Review</button>
 					</li>
 				</ul>
 			</form>
 		</div>
 	</div>
 </body>
+
+<style>
+	@media (max-width: 830px) {
+		.form-input {
+			flex-direction: column;
+		}
+		.form-media {
+			padding-left: 0;
+		}
+	}
+
+	@media (max-width: 500px) {
+		textarea {
+			width: 18rem;
+
+		}
+		.form-media {
+			padding-left: 0;
+		}
+		.card-form {
+			padding: 1rem 0rem 2rem 0rem;
+		}
+	}
+</style>
 </html>

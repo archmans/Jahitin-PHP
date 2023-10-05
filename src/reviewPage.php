@@ -70,20 +70,22 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 		<?php foreach( $review as $row ) { ?>
 			<div class="card-review">
 				<div class="container-review-all">
-					<div class="container-foto">
-						<img alt="profil-user" src="assets/user.png" style="height: 30px">
+					<div class="content">
+						<div class="container-foto">
+							<img alt="profil-user" src="assets/user.png" style="height: 30px">
+						</div>
+						<div class="container-review">
+							<p class="user"> anonymous </p>
+							<div class="isi-ulasan"><?= $row["ulasan"]; ?></div>
+							<div class="media-ulasan">
+								<img alt="foto-ulasan" src="img/<?= $row["foto_ulasan"]; ?>" style="height: 100px; max-width: 200px">
+								<video alt="video-ulasan" src="vid/<?= $row["video_ulasan"]; ?>" style="height: 100px; max-width: 200px" controls>
+							</div>
+						</div>
 					</div>
-					<div class="container-review">
-						<p class="user"> anonymous </p>
-						<div class="isi-ulasan"><?= $row["ulasan"]; ?></div>
-						<div class="media-ulasan">
-							<img alt="foto-ulasan" src="img/<?= $row["foto_ulasan"]; ?>" style="height: 100px; max-width: 200px">
-							<video alt="video-ulasan" src="vid/<?= $row["video_ulasan"]; ?>" style="height: 100px; max-width: 200px" controls>
-						</div>
-						<div class="aksi">
-							<a class="update" href="controller/updateReview.php?id=<?php echo $row["reviewID"]; ?>">Update</a> 
-							<a class="delete" href="controller/deleteReview.php?id=<?= $row["reviewID"]; ?>" onclick="return confirm('Are you sure?');">Delete</a>
-						</div>
+					<div class="aksi">
+						<a class="update" href="controller/updateReview.php?id=<?php echo $row["reviewID"]; ?>">Update</a> 
+						<a class="delete" href="controller/deleteReview.php?id=<?= $row["reviewID"]; ?>" onclick="return confirm('Are you sure?');">Delete</a>
 					</div>
 				</div>
 			</div>

@@ -12,7 +12,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem;
+    margin: 2rem 0 10rem 0;
     padding: 2rem 0 3rem 0;
     border: 0.2rem solid #279864;
     border-radius: 1rem;
@@ -76,11 +76,13 @@ button.active, button:hover {
     transition: all 0.5s ease;
 }
 
-
-
-
-@media (max-width: 800px) {
-    .search-results .line { 
-        margin-top: 2.5rem;
+@media (max-width: 700px) {
+    .card-profil { 
+        flex-direction: column;
+    }
+    .container-profil .card-profil ul {
+        list-style: none;
+        margin-right: 0;
+        padding: 0 1rem 0 1rem;
     }
 }

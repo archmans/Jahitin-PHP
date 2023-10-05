@@ -303,4 +303,11 @@ nav ul il a.active, nav ul li a:hover {
     .sort-filter .sort-option {
         margin-bottom: 1rem;;
     }
+    .add {
+        margin: 2rem;
+        padding: 0.5rem 1rem 0 1rem;
+    }
+    .add a {
+        font-size: 1.2rem;
+    }
 }

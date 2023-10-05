@@ -106,7 +106,7 @@ if( isset($_POST["search"]) ) {
                                     <div class="popup">
                                         <h2><?= $row["nama"]; ?></h2>
                                         <div class="content">
-                                            <video src="vid/<?= $row["video_tailor"]; ?>" style="width: auto; height: 200px" controls></video>
+                                            <video src="vid/<?= $row["video_tailor"]; ?>" controls></video>
                                         </div>
                                     </div>
                                 </div>

@@ -13,7 +13,7 @@ if( isset($_POST["update"]) ) {
 	if( updateTailor($_POST) > 0 ) {
 		echo "<script>
 				alert('data berhasil diupdate!');
-				document.location.href = '../homePage.php';
+				document.location.href = '../homepageAdmin.php';
 			</script>";
 	} else {
 		echo "<script>

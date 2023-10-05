@@ -1,5 +1,5 @@
 <?php
-$server = "localhost";
+$server = "localhost:3307";
 $username = "root";
 $password = "";
 $database = "jahitin";
@@ -31,42 +31,56 @@ function deleteTailor($id) {
 
 function uploadGambar($parameter) {
 	$namaFile = $_FILES[$parameter]['name'];
-	$ukuranFile = $_FILES[$parameter]['size'];
-	$error = $_FILES[$parameter]['error'];
-	$tmpName = $_FILES[$parameter]['tmp_name'];
+    $ukuranFile = $_FILES[$parameter]['size'];
+    $error = $_FILES[$parameter]['error'];
+    $tmpName = $_FILES[$parameter]['tmp_name'];
 
-	if( $error === 4 ) {
-		echo "<script>
-				alert('Pilih gambar terlebih dahulu!');
-			</script>";
-		return false;
-	}
+    if ($error === 4) {
+        echo "<script>
+                alert('Pilih gambar terlebih dahulu!');
+            </script>";
+        return false;
+    }
 
-	$ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
-	$ekstensiGambar = explode('.', $namaFile);
-	$ekstensiGambar = strtolower(end($ekstensiGambar));
-	if( !in_array($ekstensiGambar, $ekstensiGambarValid) ) {
-		echo "<script>
-				alert('Upload gambar dengan format jpg, jpeg, atau png!');
-			</script>";
-		return false;
-	}
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "<script>
+                alert('Upload gambar dengan format jpg, jpeg, atau png!');
+            </script>";
+        return false;
+    }
 
-	if( $ukuranFile > 5 * 1024 * 1024 ) {
-		echo "<script>
-				alert('Ukuran gambar terlalu besar!, maksimal 5MB');
-			</script>";
-		return false;
-	}
+    if ($ukuranFile > 5 * 1024 * 1024) {
+        echo "<script>
+                alert('Ukuran gambar terlalu besar!, maksimal 5MB');
+            </script>";
+        return false;
+    }
 
-	$namaFileBaru = uniqid();
-	$namaFileBaru .= '.';
-	$namaFileBaru .= $ekstensiGambar;
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
 
-	var_dump($namaFileBaru);
+    $path = '../img/' . $namaFileBaru;
 
-	move_uploaded_file($tmpName, '../img/' . $namaFileBaru);
-	return $namaFileBaru;
+    move_uploaded_file($tmpName, $path);
+
+    list($width, $height) = getimagesize($path);
+    $size = min($width, $height);
+    $x = ($width - $size) / 2;
+    $y = ($height - $size) / 2;
+
+    $source = imagecreatefromjpeg($path);
+    $dest = imagecreatetruecolor($size, $size);
+    imagecopyresized($dest, $source, 0, 0, $x, $y, $size, $size, $size, $size);
+
+    imagejpeg($dest, $path);
+    imagedestroy($source);
+    imagedestroy($dest);
+
+    return $namaFileBaru;
 }
 
 function uploadVid($parameter) {

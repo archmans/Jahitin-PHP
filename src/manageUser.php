@@ -26,7 +26,7 @@ $user = query("select * from users");
     </div>
     <nav>
         <div class="nav-left">
-            <a href="homepageUser.php">Back</a>
+            <a href="homepageAdmin.php">Back</a>
         </div>
         <div class="logo">
             <img src="assets\logo.png" alt="logo jahitin"/>

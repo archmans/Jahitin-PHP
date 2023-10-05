@@ -8,8 +8,15 @@
     
 }
 
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
 .container-review-all{
     display: flex;
+    flex-direction: column;
     width: 40rem;
     border: 0.2rem solid #279864;
     margin: 2rem 1rem 0 1rem;
@@ -27,6 +34,11 @@
     flex-direction: column;
     align-items: flex-start;
     width: 100%
+}
+
+.media-ulasan {
+    display: flex;
+    flex-direction: row;
 }
 
 .user {
@@ -83,20 +95,19 @@ a.delete.active, a.delete:hover {
     .line {
         margin-top: 2.5rem;
     }
+    .container-review-all {
+        width: 30rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .media-ulasan {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 500px) {
     .aksi { 
         justify-content: center
-    }
-
-    .add {
-        width: 50%;
-        height: 3rem;
-        margin: 1.5rem;
-    }
-
-    .add a {
-        font-size: 1rem;
     }
 }

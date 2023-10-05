@@ -13,12 +13,12 @@ if( isset($_POST["tambah"]) ) {
 	if( addReview($_POST) > 0 ) {
 		echo "<script>
 				alert('data berhasil ditambahkan!');
-				document.location.href = '../reviewPage.php';
+				document.location.href = '../reviewPage.php?id=$id';
             </script>";
 	} else {
 		echo "<script>
 				alert('data gagal ditambahkan!');
-				document.location.href = '../reviewPage.php';
+				document.location.href = '../reviewPage.php?id=$id';
 		</script>";
 	}
 }
@@ -41,7 +41,7 @@ if( isset($_POST["tambah"]) ) {
     </div>
     <nav>
         <div class="nav-left">
-            <a href="..\reviewPage.php">Back</a>
+			<a href="..\reviewPage.php?id=<?= $id; ?>">Back</a>
         </div>
         <div class="logo">
             <img src="..\assets\logo.png" alt="logo jahitin"/>
@@ -96,4 +96,24 @@ if( isset($_POST["tambah"]) ) {
 		</div>
 	</div>
 </body>
+
+<style>
+	@media (max-width: 840px) {
+		.form-input {
+			flex-direction: column;
+		}
+	}
+	@media (max-width: 520px) {
+		.card-form {
+			padding: 1rem 0rem 2rem 0rem;
+		}
+		textarea {
+			width: 16rem;
+		}
+		.form-media {
+    		padding: 0;
+		}
+	}
+</style>
+
 </html>
