@@ -10,7 +10,16 @@ if (isset($_POST['login'])) {
     
     if ($result && mysqli_num_rows($result) === 1) {
         $row = mysqli_fetch_assoc($result);
-        if ($password == $row['password']) {
+        if ($password == $row['password'] && $row['role'] == 'admin') {
+            $_SESSION['role'] = $row['role'];
+            $_SESSION['login'] = true;
+            $_SESSION['id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
+            header("location: ../homepageAdmin.php");
+            exit;
+        } else if ($password == $row['password'] && $row['role'] == 'user') {
+            $_SESSION['role'] = $row['role'];
             $_SESSION['login'] = true;
             $_SESSION['id'] = $row['id'];
             $_SESSION['username'] = $row['username'];
