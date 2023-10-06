@@ -1,9 +1,6 @@
 <?php
 include "../config/config.php";
 
-session_start();
-error_reporting(0);
-
 if (isset($_POST['register'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
@@ -18,9 +15,6 @@ if (isset($_POST['register'])) {
             $username = "";
             $email = "";
             $_POST['password'] = "";
-            $_SESSION['login'] = true;
-            $_SESSION['username'] = $username;
-            $_SESSION['email'] = $email;
             header("location: ..\loginPage.php");
         } else {
             echo "<script>alert('Registration Failed!')</script>";
