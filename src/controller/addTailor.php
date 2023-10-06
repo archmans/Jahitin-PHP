@@ -88,8 +88,8 @@ if( isset($_POST["tambah"]) ) {
 								<label for="jenis">Jenis : </label>
 								<select name="jenis" id="jenis">
 									<option disabled selected value>Jenis </option>
-									<option value="custom">Custom</option>
-									<option value="service">Service</option>
+									<option value="Custom">Custom</option>
+									<option value="Service">Service</option>
 								</select>
 							</li>
 						</div>
