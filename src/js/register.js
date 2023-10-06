@@ -9,30 +9,52 @@ var isEmailInputValid = false;
 var isPasswordInputValid = false;
 var submitBtn = document.getElementById('submit');
 
+
 usernameInput.addEventListener("input", function() {
+    console.log("Username input event triggered"); 
     var username = usernameInput.value;
-    var isUsernameInputValid = false;
     if (username.length > 0) {
         if (/^(?=.{1,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/.test(username)) {
             checkAvailabilityUsername(username);
+            usernameInput.style.border = "2px solid green";
+            errorMsgUsername.style.display = "none";
+            isUsernameInputValid = true;
         } else {
-            showError("Username must be 1-20 characters, only contain letters, numbers, underscores, and periods.", isUsernameInputValid, usernameInput, errorMsgUsername);
+            usernameInput.style.border = "2px solid red";
+            errorMsgUsername.style.display = "block";
+            errorMsgUsername.style.color = "red";
+            errorMsgUsername.innerHTML = "Username must be 1-20 characters long and can only contain letters, numbers, underscores and periods.";
+            isUsernameInputValid = false;
         }
     } else {
-        showError("Username is required", isUsernameInputValid, usernameInput, errorMsgUsername);
+        usernameInput.style.border = "2px solid red";
+        errorMsgUsername.style.display = "block";
+        errorMsgUsername.style.color = "red";
+        errorMsgUsername.fontSize = "10px";
+        errorMsgUsername.innerHTML = "Username is required";
+        isUsernameInputValid = false;
     }
     updateSubmitButton();
 });
 
 function checkAvailabilityUsername(username) {
+    console.log("Checking availability of username: " + username);      
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
             if (data.isAvailable) {
-                notError(error, isUsernameInputValid, usernameInput);
+                usernameInput.style.border = "2px solid green";
+                errorMsgUsername.style.display = "none";
+                isUsernameInputValid = true;
             } else {
-                showError("Username is already taken", isUsernameInputValid, usernameInput, errorMsgUsername);
+                usernameInput.style.border = "2px solid red";
+                errorMsgUsername.style.fontSize = "10px";
+                errorMsgUsername.style.display = "block";
+                errorMsgUsername.style.color = "red";
+                errorMsgPassword.style.fontSize = "10px";
+                errorMsgUsername.innerHTML = "Username already exists";
+                isUsernameInputValid = false;
             }
         }
     };
@@ -41,55 +63,70 @@ function checkAvailabilityUsername(username) {
 }
 
 emailInput.addEventListener("input", function() {
+    console.log("Email input event triggered");
     var email = emailInput.value;
-    var isEmailInputValid = false;
     if (email.length > 0) {
         if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
-            notError(errorMsgEmail, isEmailInputValid, emailInput);
+            emailInput.style.border = "2px solid green";
+            errorMsgEmail.style.display = "none";
+            isEmailInputValid = true;
         } else {
-            showError("Email is not valid", isEmailInputValid, emailInput, errorMsgEmail);
+            emailInput.style.border = "2px solid red";
+            errorMsgEmail.style.display = "block";
+            errorMsgEmail.style.color = "red";
+            errorMsgEmail.style.fontSize = "10px";
+            errorMsgEmail.innerHTML = "Email is invalid";
+            isEmailInputValid = false;
         }
-    } else {    
-        showError("Email is required", isEmailInputValid, emailInput, errorMsgEmail);
+    } else {
+        emailInput.style.border = "2px solid red";
+        errorMsgEmail.style.display = "block";
+        errorMsgEmail.style.color = "red";
+        errorMsgEmail.style.fontSize = "10px";
+        errorMsgEmail.innerHTML = "Email is required";
+        isEmailInputValid = false;
     }
     updateSubmitButton();
 });
 
 passwordInput.addEventListener("input", function() {
+    console.log("Password input event triggered");
     var password = passwordInput.value;
-    var isPasswordInputValid = false;
     if (password.length > 0) {
         if (/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)) {
-            notError(errorMsgPassword, isPasswordInputValid, passwordInput);
+            passwordInput.style.border = "2px solid green";
+            errorMsgPassword.style.display = "none";
+            isPasswordInputValid = true;
         } else {
-            showError("Password must be at least 8 characters and contain at least one letter and one number", isPasswordInputValid, passwordInput, errorMsgPassword);
+            passwordInput.style.border = "2px solid red";
+            errorMsgPassword.style.display = "block";
+            errorMsgPassword.style.color = "red";
+            errorMsgPassword.style.fontSize = "10px";
+            errorMsgPassword.innerHTML = "Password must be at least 8 characters long and contain at least one letter and one number";
+            isPasswordInputValid = false;
         }
     } else {
-        showError("Password is required", isPasswordInputValid, passwordInput, errorMsgPassword);
+        passwordInput.style.border = "2px solid red";
+        errorMsgPassword.style.display = "block";
+        errorMsgPassword.style.color = "red";
+        errorMsgPassword.style.fontSize = "10px";
+        errorMsgPassword.innerHTML = "Password is required";
+        isPasswordInputValid = false;
     }
     updateSubmitButton();
 });
 
-function showError(message, valid, input, error) {
-    input.style.border = "2px solid red";
-    error.style.fontSize = "10px";
-    error.style.display = "block";
-    error.style.color = "red";
-    error.innerHTML = message;
-    valid = false;
-}
-
-function notError(error, valid, input) {
-    input.style.border = "2px solid green";
-    error.style.display = "none";
-    valid = true;
-}
-
 function updateSubmitButton() {
+    console.log("Updating submit button");
     var submitBtn = document.getElementById('submit');
+    console.log("isUsernameInputValid: " + isUsernameInputValid);
+    console.log("isEmailInputValid: " + isEmailInputValid);
+    console.log("isPasswordInputValid: " + isPasswordInputValid);
     if (isUsernameInputValid && isEmailInputValid && isPasswordInputValid) {
-        submitBtn.disabled = false;
+        console.log("All inputs are valid");
+        submitBtn.disabled = false; // Enable the button
     } else {
-        submitBtn.disabled = true;
+        console.log("Not all inputs are valid");
+        submitBtn.disabled = true; // Disable the button
     }
 }
