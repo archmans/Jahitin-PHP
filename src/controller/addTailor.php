@@ -86,7 +86,11 @@ if( isset($_POST["tambah"]) ) {
 							</li>
 							<li>
 								<label for="jenis">Jenis : </label>
-								<input type="text" name="jenis" id="jenis">
+								<select name="jenis" id="jenis">
+									<option disabled selected value>Jenis </option>
+									<option value="custom">Custom</option>
+									<option value="service">Service</option>
+								</select>
 							</li>
 						</div>
 						<div class="form-media" style="padding-left: 0">
@@ -115,7 +119,7 @@ if( isset($_POST["tambah"]) ) {
 	@media (max-width: 500px) {
 		input#nama, 
 		input#alamat, 
-		input#jenis {
+		select#jenis {
 			width: 17rem;
 		}
 		.card-form {
