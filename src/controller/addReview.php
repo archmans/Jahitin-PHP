@@ -51,12 +51,12 @@ if( isset($_POST["tambah"]) ) {
         <div class="nav-right">
             <ul>
 				<?php if ($_SESSION['role'] == 'admin') { ?>
-					<li><a href="homepageAdmin.php">Tailor</a></li>
-					<li><a href="manageUser.php">User</a></li>
+					<li><a href="../homepageAdmin.php">Tailor</a></li>
+					<li><a href="../manageUser.php">User</a></li>
 					<li><a href="../backend/logout.php">Logout</a></li>
 				<?php } else { ?>
-					<li><a href="homepageUser.php">Home</a></li>
-					<li><a href="profilPage.php">Profile</a></li>
+					<li><a href="../homepageUser.php">Home</a></li>
+					<li><a href="../profilPage.php">Profile</a></li>
 					<li><a href="../backend/logout.php">Logout</a></li>
 				<?php } ?>
             </ul>
