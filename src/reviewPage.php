@@ -83,41 +83,45 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 							<p class="user"> anonymous </p>
 							<div class="isi-ulasan"><?= $row["ulasan"]; ?></div>
 							<div class="media-ulasan">
-								<a class="button" href="#popup1">
+								<!-- Pop-up untuk Gambar -->
+								<a class="button" href="#popupPic<?= $i ?>">
 									<div class="media-foto">
-										<img alt="foto-ulasan" src="img/<?= $row["foto_ulasan"]; ?>" >
+										<img alt="foto-ulasan" src="img/<?= $row["foto_ulasan"]; ?>">
 									</div>
 								</a>
-                                <div id="popup1" class="overlay">
-                                    <div class="container-popUp">
-                                        <div class="close">
-                                            <a class="x" href="#">&times;</a>
-                                        </div>
-                                        <div class="popup">
-                                            <div class="content" style="justify-content: center">
-                                                <img src="img/<?= $row["foto_ulasan"]; ?>" style="max-height: 500px;"></img>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-								<a class="button" href="#popup2">
+								<div id="popupPic<?= $i ?>" class="overlay">
+									<div class="container-popUp">
+										<div class="close">
+											<a class="x" href="#" onclick="closePopupPic(<?= $i ?>)">&times;</a>
+										</div>
+										<div class="popup">
+											<div class="content" style="justify-content: center">
+												<img src="img/<?= $row["foto_ulasan"]; ?>" style="max-height: 500px;">
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Pop-up untuk Video -->
+								<a class="button" href="#popupVid<?= $i ?>">
 									<div class="media-video">
-										<video alt="video-ulasan" src="vid/<?= $row["video_ulasan"]; ?>">
+										<video alt="video-ulasan" src="vid/<?= $row["video_ulasan"]; ?>" controls></video>
 									</div>
 								</a>
-                                <div id="popup2" class="overlay">
-                                    <div class="container-popUp">
-                                        <div class="close">
-                                            <a class="x" href="#">&times;</a>
-                                        </div>
-                                        <div class="popup">
-                                            <div class="content" style="justify-content: center">
-                                                <video src="vid/<?= $row["video_ulasan"]; ?>" style="max-height: 500px;" controls></video>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+								<div id="popupVid<?= $i ?>" class="overlay">
+									<div class="container-popUp">
+										<div class="close">
+											<a class="x" href="#" onclick="closePopupVid(<?= $i ?>)">&times;</a>
+										</div>
+										<div class="popup">
+											<div class="content" style="justify-content: center">
+												<video src="vid/<?= $row["video_ulasan"]; ?>" id="vid<?= $i ?>" style="max-height: 500px;" controls></video>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
+
 						</div>
 					</div>
 					<div class="aksi">
@@ -129,5 +133,9 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 			<?php $i++; ?>
 		<?php } ?>
 	</div>
+	<script>
+		src="js/popUpVideo.js"
+		src="js/popUpFoto.js"
+	</script>
 </body>
 </html>

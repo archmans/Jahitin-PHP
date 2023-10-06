@@ -98,11 +98,11 @@ if( isset($_POST["search"]) ) {
                             <h5>Review</h5>
                             <a class="button" href="reviewPage.php?id=<?php echo $row["tailorID"]; ?>">Tailor's Review</a>
                             <h5>Karya</h5>
-                            <a class="button" href="#popup<?= $i ?>">Video Karya Penjahit</a>
-                            <div id="popup<?= $i ?>" class="overlay">
+                            <a class="button" href="#popupVid<?= $i ?>">Video Karya Penjahit</a>
+                            <div id="popupVid<?= $i ?>" class="overlay">
                                 <div class="container-popUp">
                                     <div class="close">
-                                        <a class="x" href="" onclick="closePopup(<?= $i ?>)">&times;</a>
+                                        <a class="x" href="" onclick="closePopupVid(<?= $i ?>)">&times;</a>
                                     </div>
                                     <div class="popup">
                                         <h2><?= $row["nama"]; ?></h2>
