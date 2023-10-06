@@ -52,9 +52,9 @@ if( isset($_POST["update"]) ) {
         </div>
         <div class="nav-right">
             <ul>
-				<li><a href="homepageAdmin.php">Tailor</a></li>
-				<li><a href="manageUser.php">User</a></li>
-				<li><a href="backend/logout.php">Logout</a></li>
+				<li><a href="../homepageAdmin.php">Tailor</a></li>
+				<li><a href="../manageUser.php">User</a></li>
+				<li><a href="../backend/logout.php">Logout</a></li>
             </ul>
         </div>
     </nav>
