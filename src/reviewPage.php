@@ -76,7 +76,7 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 			<div class="card-review">
 				<div class="container-review-all">
 					<div class="content">
-						<div class="container-foto">
+						<div class="container-profil">
 							<img alt="profil-user" src="assets/user.png" style="height: 30px">
 						</div>
 						<div class="container-review">
@@ -105,7 +105,7 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 								<!-- Pop-up untuk Video -->
 								<a class="button" href="#popupVid<?= $i ?>">
 									<div class="media-video">
-										<video alt="video-ulasan" src="vid/<?= $row["video_ulasan"]; ?>" controls></video>
+										<video alt="video-ulasan" src="vid/<?= $row["video_ulasan"]; ?>"></video>
 									</div>
 								</a>
 								<div id="popupVid<?= $i ?>" class="overlay">
