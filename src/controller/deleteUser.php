@@ -1,4 +1,13 @@
 <?php
+session_start();
+if ($_SESSION["role"] != "admin") {
+    header("location: loginPage.php");
+    exit;
+}
+if (!isset($_SESSION["login"])) {
+    header("location: loginPage.php");
+    exit;
+}
 require 'functionsUser.php';
 $userID = $_GET["id"];
 
