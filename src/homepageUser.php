@@ -1,8 +1,12 @@
 <?php
 session_start();
+if ($_SESSION["role"] != "user") {
+    header("location: loginPage.php");
+    exit;
+}
 if (!isset($_SESSION["login"])) {
-	header("location: loginPage.php");
-	exit;
+    header("location: loginPage.php");
+    exit;
 }
 
 require 'controller/functions.php';
@@ -38,7 +42,7 @@ if( isset($_POST["search"]) ) {
             <ul>
                 <li><a href="homepageUser.php" style="color: #279864">Home</a></li>
                 <li><a href="profilPage.php">Profile</a></li>
-                <li><a href="logoutBackend.php">Logout</a></li>
+                <li><a href="backend/logout.php">Logout</a></li>
             </ul>
         </div>
     </nav>
