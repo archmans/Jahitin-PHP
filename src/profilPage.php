@@ -1,8 +1,12 @@
 <?php 
 session_start();
+if ($_SESSION["role"] != "user") {
+    header("location: loginPage.php");
+    exit;
+}
 if (!isset($_SESSION["login"])) {
-	header("location: loginPage.php");
-	exit;
+    header("location: loginPage.php");
+    exit;
 }
 
 require 'controller/functionsUser.php';
@@ -48,7 +52,7 @@ if( isset($_POST["save"]) ) {
             <ul>
                 <li><a href="homepageUser.php">Home</a></li>
                 <li><a href="profilPage.php" style="color: #279864">Profile</a></li>
-                <li><a href="logoutBackend.php">Logout</a></li>
+                <li><a href="backend/logout.php">Logout</a></li>
             </ul>
         </div>
     </nav>
@@ -89,5 +93,4 @@ if( isset($_POST["save"]) ) {
         padding-left: 3rem;
     }
 </style>
-
 </html>
