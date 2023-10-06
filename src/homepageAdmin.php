@@ -1,8 +1,12 @@
 <?php
 session_start();
+if ($_SESSION["role"] != "admin") {
+    header("location: loginPage.php");
+    exit;
+}
 if (!isset($_SESSION["login"])) {
-	header("location: loginPage.php");
-	exit;
+    header("location: loginPage.php");
+    exit;
 }
 
 require 'controller/functions.php';
@@ -136,5 +140,5 @@ if( isset($_POST["search"]) ) {
     }
 
 </style>
-
 </body>
+</html>
