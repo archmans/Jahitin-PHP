@@ -21,6 +21,7 @@ $review = query("select * from review where penjahitID = $idPenjahit");
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles\homepage.css">
     <link rel="stylesheet" href="styles\reviewPage.css">
+	<link rel="stylesheet" href="styles\listTailor.css">
 </head>
 
 <body>
@@ -82,8 +83,40 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 							<p class="user"> anonymous </p>
 							<div class="isi-ulasan"><?= $row["ulasan"]; ?></div>
 							<div class="media-ulasan">
-								<img alt="foto-ulasan" src="img/<?= $row["foto_ulasan"]; ?>" style="height: 100px; max-width: 200px">
-								<video alt="video-ulasan" src="vid/<?= $row["video_ulasan"]; ?>" style="height: 100px; max-width: 200px" controls>
+								<a class="button" href="#popup1">
+									<div class="media-foto">
+										<img alt="foto-ulasan" src="img/<?= $row["foto_ulasan"]; ?>" >
+									</div>
+								</a>
+                                <div id="popup1" class="overlay">
+                                    <div class="container-popUp">
+                                        <div class="close">
+                                            <a class="x" href="#">&times;</a>
+                                        </div>
+                                        <div class="popup">
+                                            <div class="content" style="justify-content: center">
+                                                <img src="img/<?= $row["foto_ulasan"]; ?>" style="max-height: 500px;"></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								<a class="button" href="#popup2">
+									<div class="media-video">
+										<video alt="video-ulasan" src="vid/<?= $row["video_ulasan"]; ?>">
+									</div>
+								</a>
+                                <div id="popup2" class="overlay">
+                                    <div class="container-popUp">
+                                        <div class="close">
+                                            <a class="x" href="#">&times;</a>
+                                        </div>
+                                        <div class="popup">
+                                            <div class="content" style="justify-content: center">
+                                                <video src="vid/<?= $row["video_ulasan"]; ?>" style="max-height: 500px;" controls></video>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 							</div>
 						</div>
 					</div>
