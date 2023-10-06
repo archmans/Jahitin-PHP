@@ -32,7 +32,7 @@
                 <span id="errorMsgPassword"></span>
             </div>
             <div class="input-group">
-                <button type="submit" id='submit' name="register" class="btn">Register</button>
+                <button type="submit" id='submit' name="register" class="btn" disabled>Register</button>
             </div>
             <p class="login-register-text">Already Have an Account? <a href="loginPage.php">Login Here</a>.</p>
         </form>
