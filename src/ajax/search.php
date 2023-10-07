@@ -39,14 +39,14 @@ $tailorPerPage = query($sql . " LIMIT " . $firstData . ", " . $countDataperPage)
                 <img src="img/<?= $row["foto_tailor"]; ?>" alt="<?= $row["nama"]; ?>" class="tailor-photo">
             </div>
             <div class="tailor-info">
-                <h2 class="tailor-name"><?= $row["nama"]; ?></h2>
-                    <h5>Address</h5>
+                <h1 class="tailor-name"><?= $row["nama"]; ?></h1>
+                    <h2>Address</h2>
                     <p class="tailor-address"><?= $row["alamat"]; ?></p>
-                    <h5>Category</h5>
+                    <h2>Category</h2>
                     <p class="tailor-category"><?= $row["jenis"]; ?></p>
-                    <h5>Review</h5>
+                    <h2>Review</h2>
                     <a class="button" href="reviewPage.php?id=<?php echo $row["tailorID"]; ?>">Tailor's Review</a>
-                    <h5>Karya</h5>
+                    <h2>Karya</h2>
                     <a class="button" href="#popupVid<?= $i ?>">Video Karya Penjahit</a>
                     <div id="popupVid<?= $i ?>" class="overlay">
                         <div class="container-popUp">
@@ -54,7 +54,7 @@ $tailorPerPage = query($sql . " LIMIT " . $firstData . ", " . $countDataperPage)
                                 <a class="x" href="" onclick="closePopupVid(<?= $i ?>)">&times;</a>
                             </div>
                             <div class="popup">
-                                <h2><?= $row["nama"]; ?></h2>
+                                <h1><?= $row["nama"]; ?></h1>
                                 <div class="content">
                                     <video src="vid/<?= $row["video_tailor"]; ?>" id="vid<?= $i ?>" style="max-height: 450px;" controls></video>
                                 </div>
