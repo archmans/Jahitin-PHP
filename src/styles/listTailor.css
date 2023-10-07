@@ -2,13 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 3rem;
+    margin: 3rem 0 5rem 0;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tailor-list {
     list-style: none;
-    margin-bottom: 5rem;
-    justify-content: center;
+    margin-bottom: 3rem;
+    width: fit-content;
 }
 
 .tailor-item {
@@ -107,6 +109,46 @@ a.button {
     color: #279864;
     transition: all 0.5s ease; 
 }
+
+.pagination ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination li {
+    display: inline-block;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    background-color: rgb(203, 198, 198, 0.5);
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25);
+}
+
+.pagination li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.pagination .active a {
+    color: #000;
+}
+
+.pagination .active {
+    background-color: #279864;
+    color: #fff;
+}
+
+.pagination li:hover {
+    background-color: rgb(39, 152, 100, 0.5);
+    transform: scale(1.1);
+}
   
 .overlay {
     position: fixed;
@@ -185,7 +227,7 @@ a.button {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 3.5rem;
+    margin-bottom: 1rem;
 }
 
 .tailor-actions .update, 

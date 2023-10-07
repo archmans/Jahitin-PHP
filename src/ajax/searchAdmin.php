@@ -87,8 +87,8 @@ $tailorPerPage = query($sql . " LIMIT " . $firstData . ", " . $countDataperPage)
         <?php for ($i = $activePage - 1; $i <= $activePage + 1; $i++) { ?>
             <?php if ($i >= 1 && $i <= $pages) { ?>
                 <?php if ($i == $activePage) { ?>
-                    <li>
-                        <a href="#" style="font-weight: bold; color: green;" onclick="searchTailorAdmin(<?php echo $i; ?>); return false;"><?= $i; ?></a>
+                    <li class="active">
+                        <a href="#" onclick="searchTailorAdmin(<?php echo $i; ?>); return false;"><?= $i; ?></a>
                     </li>
                 <?php } else { ?>
                     <li>
