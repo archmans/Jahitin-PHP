@@ -62,7 +62,7 @@ $tailor = query("select * from tailor");
                     </select>
                 </div>
                 <div class="buttons">
-                    <button class="btn" id="search-btn" onclick="searchTailor(1);">Search</button>
+                    <button class="btn" id="search-btn" onclick="debounceSearchTailor(1);">Search</button>
                     <button class="btn" id="reset-btn" onclick="resetSearch();">Reset</button>
                 </div>
             </div>

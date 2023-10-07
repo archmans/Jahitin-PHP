@@ -62,7 +62,7 @@ $tailor = query("select * from tailor");
                     </select>
                 </div>
                 <div class="buttons">
-                    <button class="btn" id="search-btn" onclick="searchTailorAdmin(1);">Search</button>
+                    <button class="btn" id="search-btn" onclick="debounceSearchTailorAdmin(1);">Search</button>
                     <button class="btn" id="reset-btn" onclick="resetSearchAdmin();">Reset</button>
                 </div>
             </div>
@@ -116,9 +116,9 @@ $tailor = query("select * from tailor");
                                 </div>  
                             </div>
                             <div class="tailor-actions">
-                                <a class="update" href="controller/updateTailor.php?id=<?php echo $row["tailorID"]; ?>">update</a>
-                                <a class="review" href="reviewPage.php?id=<?php echo $row["tailorID"]; ?>">review</a>
-                                <a class="delete" href="controller/deleteTailor.php?id=<?php echo $row["tailorID"]; ?>" onclick="return confirm('yakin?')">delete</a></td>
+                                <a class="update" href="controller/updateTailor.php?id=<?php echo $row["tailorID"]; ?>">Update</a>
+                                <a class="review" href="reviewPage.php?id=<?php echo $row["tailorID"]; ?>">Review</a>
+                                <a class="delete" href="controller/deleteTailor.php?id=<?php echo $row["tailorID"]; ?>" onclick="return confirm('Are you sure you want to delete the tailor?')">Delete</a></td>
                             </div>
                         </li>
                     </div>

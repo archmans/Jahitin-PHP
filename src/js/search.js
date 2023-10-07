@@ -1,3 +1,14 @@
+var debounceTimer;
+
+function debounceSearchTailor(page) {
+    clearTimeout(debounceTimer);
+    
+    debounceTimer = setTimeout(function () {
+        console.log("Debounce");
+        searchTailor(page);
+    }, 500);
+}
+
 function searchTailor(page) {
     var keyword = document.getElementById("search-term").value;
     var sort = document.getElementById("sort-Alphabet").value;
