@@ -41,28 +41,31 @@ if( isset($_POST["save"]) ) {
     <title>Homepage User</title>
 </head>
 <body>
-    <div class="bangs">
-        <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
+    <div class="container">
+        <div class="bangs">
+            <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="assets\logo.png" alt="logo jahitin"/>
+            </div>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="homepageUser.php">Home</a></li>
+                    <li><a href="profilPage.php" style="color: #279864">Profile</a></li>
+                    <li><a href="backend/logout.php">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-title">
+            <div class="line-left"></div>
+            <div class="title">
+                <p>Your Profile</p>
+            </div>
+            <div class="line-right"></div>
+        </div>
     </div>
-    <nav>
-        <div class="logo">
-            <img src="assets\logo.png" alt="logo jahitin"/>
-        </div>
-        <div class="nav-right">
-            <ul>
-                <li><a href="homepageUser.php">Home</a></li>
-                <li><a href="profilPage.php" style="color: #279864">Profile</a></li>
-                <li><a href="backend/logout.php">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container-title">
-        <div class="line-left"></div>
-        <div class="title">
-            <p>Your Profile</p>
-        </div>
-        <div class="line-right"></div>
-    </div>
+
     <div class="container-profil">
         <div class="card-profil">
             <div class="foto-profil">

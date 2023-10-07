@@ -33,6 +33,10 @@ body {
     text-align: center;
 }
 
+.container {
+    background: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.3));
+}
+
 nav {
     display: flex;
     width: 100%;
@@ -145,7 +149,8 @@ nav ul il a.active, nav ul li a:hover {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 2rem 0 2rem 0;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .search-input {

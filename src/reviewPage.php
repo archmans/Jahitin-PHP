@@ -25,45 +25,48 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 </head>
 
 <body>
-	<div class="bangs">
-        <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
-    </div>
-    <nav>
-        <div class="nav-left">
-			<?php if ($_SESSION['role'] == 'admin') { ?>
-				<a href="homepageAdmin.php" class="arrow-left-button">
-					<img src="assets\arrow-left-32.png" alt="arrow-left"/>
-				</a>
-			<?php } else { ?>
-				<a href="homepageUser.php" class="arrow-left-button">
-					<img src="assets\arrow-left-32.png" alt="arrow-left"/>
-				</a>
-			<?php } ?>
-        </div>
-        <div class="logo">
-            <img src="assets\logo.png" alt="logo jahitin"/>
-        </div>
-        <div class="nav-right">
-			<ul>
-			<?php if ($_SESSION['role'] == 'admin') { ?>
-				<li><a href="homepageAdmin.php">Tailor</a></li>
-                <li><a href="manageUser.php">User</a></li>
-                <li><a href="backend/logout.php">Logout</a></li>
-			<?php } else { ?>
-				<li><a href="homepageUser.php">Home</a></li>
-                <li><a href="profilPage.php">Profile</a></li>
-                <li><a href="backend/logout.php">Logout</a></li>
-			<?php } ?>
-            </ul>
-        </div>
-    </nav>
-    <div class="container-title">
-        <div class="line-left"></div>
-        <div class="title">
-            <p>Tailor's Reviews</p>
-        </div>
-        <div class="line-right"></div>
-    </div>
+	<div class="container">
+		<div class="bangs">
+			<p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
+		</div>
+		<nav>
+			<div class="nav-left">
+				<?php if ($_SESSION['role'] == 'admin') { ?>
+					<a href="homepageAdmin.php" class="arrow-left-button">
+						<img src="assets\arrow-left-32.png" alt="arrow-left"/>
+					</a>
+				<?php } else { ?>
+					<a href="homepageUser.php" class="arrow-left-button">
+						<img src="assets\arrow-left-32.png" alt="arrow-left"/>
+					</a>
+				<?php } ?>
+			</div>
+			<div class="logo">
+				<img src="assets\logo.png" alt="logo jahitin"/>
+			</div>
+			<div class="nav-right">
+				<ul>
+				<?php if ($_SESSION['role'] == 'admin') { ?>
+					<li><a href="homepageAdmin.php">Tailor</a></li>
+					<li><a href="manageUser.php">User</a></li>
+					<li><a href="backend/logout.php">Logout</a></li>
+				<?php } else { ?>
+					<li><a href="homepageUser.php">Home</a></li>
+					<li><a href="profilPage.php">Profile</a></li>
+					<li><a href="backend/logout.php">Logout</a></li>
+				<?php } ?>
+				</ul>
+			</div>
+		</nav>
+		<div class="container-title">
+			<div class="line-left"></div>
+			<div class="title">
+				<p>Tailor's Reviews</p>
+			</div>
+			<div class="line-right"></div>
+		</div>
+	</div>
+
 	<div class="add">
 		<a href="controller/addReview.php?id=<?php echo $idPenjahit; ?>"> + Add Review</a>
 	</div>

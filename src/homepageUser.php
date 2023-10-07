@@ -28,49 +28,52 @@ $tailor = query("select * from tailor");
 </head>
 
 <body>
-    <div class="bangs">
-        <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
-    </div>
-    <nav>
-        <div class="logo">
-            <img src="assets\logo.png" alt="logo jahitin"/>
+    <div class="container">
+        <div class="bangs">
+            <p class="title"> Hi, <?php echo $_SESSION['username']; ?>! </p>
         </div>
-        <div class="nav-right">
-            <ul>
-                <li><a href="homepageUser.php" style="color: #279864">Home</a></li>
-                <li><a href="profilPage.php">Profile</a></li>
-                <li><a href="backend/logout.php">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="search">
-        <input type="text" class="search-input" id="search-term" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : "" ?>">
-        <div class="buttons-container">
-            <div class="sort-filter">
-                <select class="sort-option" id="sort-Alphabet">
-                    <option disabled selected value>Sort</option>
-                    <option value="asc">Ascending (A to Z)</option>
-                    <option value="desc">Descending (Z to A)</option>
-                </select>
-                <select class="filter-option" id="filter-tailor">
-                    <option disabled selected value>Filter</option>
-                    <option value="Custom">Custom Tailors</option>
-                    <option value="Service">Service Tailor</option>
-                </select>
+        <nav>
+            <div class="logo">
+                <img src="assets\logo.png" alt="logo jahitin"/>
             </div>
-            <div class="buttons">
-                <button class="btn" id="search-btn" onclick="searchTailor(1);">Search</button>
-                <button class="btn" id="reset-btn" onclick="resetSearch();">Reset</button>
+            <div class="nav-right">
+                <ul>
+                    <li><a href="homepageUser.php" style="color: #279864">Home</a></li>
+                    <li><a href="profilPage.php">Profile</a></li>
+                    <li><a href="backend/logout.php">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="search">
+            <input type="text" class="search-input" id="search-term" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : "" ?>">
+            <div class="buttons-container">
+                <div class="sort-filter">
+                    <select class="sort-option" id="sort-Alphabet">
+                        <option disabled selected value>Sort</option>
+                        <option value="asc">Ascending (A to Z)</option>
+                        <option value="desc">Descending (Z to A)</option>
+                    </select>
+                    <select class="filter-option" id="filter-tailor">
+                        <option disabled selected value>Filter</option>
+                        <option value="Custom">Custom Tailors</option>
+                        <option value="Service">Service Tailor</option>
+                    </select>
+                </div>
+                <div class="buttons">
+                    <button class="btn" id="search-btn" onclick="searchTailor(1);">Search</button>
+                    <button class="btn" id="reset-btn" onclick="resetSearch();">Reset</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container-title">
-        <div class="line-left"></div>
-        <div class="title">
-            <p>Our Tailor</p>
+        <div class="container-title">
+            <div class="line-left"></div>
+            <div class="title">
+                <p>Our Tailor</p>
+            </div>
+            <div class="line-right"></div>
         </div>
-        <div class="line-right"></div>
     </div>
+
     <div class="search-results-list" id="search-results-list">
         <ul class="tailor-list">
             <!-- <?php $i = 1; ?> -->
