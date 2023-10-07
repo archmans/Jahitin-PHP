@@ -85,7 +85,7 @@ if( isset($_POST["update"]) ) {
 						<div class="form-media">
 							<li>
 								<label for="foto_ulasan">Picture : </label>
-								<img src="../img/<?= $review["foto_ulasan"]; ?>" width="100"></img>
+								<img src="../img/<?= $review["foto_ulasan"]; ?>" width="100" alt="foto-ulasan"></img>
 								<br>
 								<input type="file" name="foto_ulasan" id="foto_ulasan">
 							</li>

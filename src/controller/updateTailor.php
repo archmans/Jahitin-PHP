@@ -84,13 +84,17 @@ if( isset($_POST["update"]) ) {
 							</li>
 							<li>
 								<label for="jenis">Category : </label>
-								<input type="text" name="jenis" id="jenis" value="<?php echo $tailor["jenis"]; ?>">
+								<select name="jenis" id="jenis">
+									<option disabled selected value> <?php echo $tailor["jenis"]; ?> </option>
+									<option value="Custom">Custom</option>
+									<option value="Service">Service</option>
+								</select>
 							</li>
 						</div>
 						<div class="form-media" style="padding-left: 0">
 							<li>
 								<label for="foto_tailor">Picture : </label>
-								<img src="../img/<?= $tailor["foto_tailor"]; ?>" width="100"></img>
+								<img src="../img/<?= $tailor["foto_tailor"]; ?>" width="100" alt="foto-tailor"></img>
 								<br>
 								<input type="file" name="foto_tailor" id="foto_tailor">
 							</li>
