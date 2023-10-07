@@ -39,8 +39,8 @@ usernameInput.addEventListener("input", function() {
 
 function checkAvailabilityUsername(username) {
     console.log("Checking availability of username: " + username);      
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var data = JSON.parse(this.responseText);
             if (data.isAvailable) {
@@ -58,8 +58,8 @@ function checkAvailabilityUsername(username) {
             }
         }
     };
-    xmlhttp.open("GET", "ajax/registerAjax.php?data=" + username, true);
-    xmlhttp.send();
+    xhr.open("GET", "ajax/registerAjax.php?data=" + username, true);
+    xhr.send();
 }
 
 emailInput.addEventListener("input", function() {
