@@ -12,9 +12,6 @@ if (!isset($_SESSION["login"])) {
 require 'controller/functions.php';
 $tailor = query("select * from tailor");
 
-// if( isset($_POST["search"]) ) {
-// 	$tailor = search($_POST["keyword"]);
-// }
 ?>
 
 <!DOCTYPE html>
