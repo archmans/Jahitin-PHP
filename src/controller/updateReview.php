@@ -41,7 +41,7 @@ if( isset($_POST["update"]) ) {
     </div>
     <nav>
 		<div class="nav-left">
-			<a href="..\reviewPage.php?id=<?= $id; ?>" class="arrow-left-button">
+			<a href="..\reviewPage.php?id=<?= $penjahitID; ?>" class="arrow-left-button">
 				<img src="..\assets\arrow-left-32.png" alt="arrow-left"/>
 			</a>
         </div>
