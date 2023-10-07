@@ -12,9 +12,9 @@ if (!isset($_SESSION["login"])) {
 require 'controller/functions.php';
 $tailor = query("select * from tailor");
 
-if( isset($_POST["search"]) ) {
-	$tailor = search($_POST["keyword"]);
-}
+// if( isset($_POST["search"]) ) {
+// 	$tailor = search($_POST["keyword"]);
+// }
 ?>
 
 <!DOCTYPE html>
@@ -48,11 +48,6 @@ if( isset($_POST["search"]) ) {
     </nav>
     <div class="search">
         <input type="text" class="search-input" id="search-term" placeholder="Search" value="<?php echo isset($_GET['search']) ? $_GET['search'] : "" ?>">
-        <?php
-        if (isset($_GET['search'])) {
-            unset($_GET['search']);
-        }
-        ?>
         <div class="buttons-container">
             <div class="sort-filter">
                 <select class="sort-option" id="sort-Alphabet">
@@ -62,13 +57,13 @@ if( isset($_POST["search"]) ) {
                 </select>
                 <select class="filter-option" id="filter-tailor">
                     <option disabled selected value>Filter</option>
-                    <option value="Costum">Custom Tailors</option>
+                    <option value="Custom">Custom Tailors</option>
                     <option value="Service">Service Tailor</option>
                 </select>
             </div>
             <div class="buttons">
-                <button class="btn" id="search-btn">Search</button>
-                <button class="btn" id="reset-btn">Reset</button>
+                <button class="btn" id="search-btn" onclick="searchTailor(1);">Search</button>
+                <button class="btn" id="reset-btn" onclick="resetSearch();">Reset</button>
             </div>
         </div>
     </div>
@@ -79,7 +74,7 @@ if( isset($_POST["search"]) ) {
         </div>
         <div class="line-right"></div>
     </div>
-    <div class="search-results-list">
+    <div class="search-results-list" id="search-results-list">
         <ul class="tailor-list">
             <!-- <?php $i = 1; ?> -->
             <?php foreach( $tailor as $row ) { ?>
@@ -127,5 +122,6 @@ if( isset($_POST["search"]) ) {
 
 </style>
         <script src="js\popUpVideo.js"></script>
+        <script src="js\search.js"></script>
 </body>
 </html>
