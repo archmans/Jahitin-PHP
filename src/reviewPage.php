@@ -5,7 +5,7 @@ if (!isset($_SESSION["login"])) {
 	exit;
 }
 
-require 'controller/functions.php';
+include 'controller/functions.php';
 
 $idPenjahit = $_GET["id"];
 $review = query("select * from review where penjahitID = $idPenjahit");
@@ -49,11 +49,11 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 				<?php if ($_SESSION['role'] == 'admin') { ?>
 					<li><a href="homepageAdmin.php">Tailor</a></li>
 					<li><a href="manageUser.php">User</a></li>
-					<li><a href="backend/logout.php">Logout</a></li>
+					<li><a href="controller/logout.php">Logout</a></li>
 				<?php } else { ?>
 					<li><a href="homepageUser.php">Home</a></li>
 					<li><a href="profilPage.php">Profile</a></li>
-					<li><a href="backend/logout.php">Logout</a></li>
+					<li><a href="controller/logout.php">Logout</a></li>
 				<?php } ?>
 				</ul>
 			</div>

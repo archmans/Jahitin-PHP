@@ -1,5 +1,5 @@
 <?php
-require '../controller/functions.php';
+include '../controller/functions.php';
 
 if (isset($_GET["data"])) {
     $username = $_GET["data"];

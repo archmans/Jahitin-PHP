@@ -9,7 +9,7 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-require 'controller/functions.php';
+include 'controller/functions.php';
 $tailor = query("select * from tailor");
 
 ?>
@@ -40,7 +40,7 @@ $tailor = query("select * from tailor");
                 <ul>
                     <li><a href="homepageUser.php" style="color: #279864">Home</a></li>
                     <li><a href="profilPage.php">Profile</a></li>
-                    <li><a href="backend/logout.php">Logout</a></li>
+                    <li><a href="controller/logout.php">Logout</a></li>
                 </ul>
             </div>
         </nav>

@@ -8,7 +8,7 @@ if (!isset($_SESSION["login"])) {
     header("location: loginPage.php");
     exit;
 }
-require 'functionsUser.php';
+include 'functionsUser.php';
 $userID = $_GET["id"];
 
 if( deleteUser($userID) > 0 ) {

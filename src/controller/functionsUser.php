@@ -1,14 +1,5 @@
 <?php
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "jahitin";
-
-$conn = mysqli_connect($server, $username, $password, $database);
-
-if (!$conn) {
-    die("Connection Failed: " . mysqli_connect_error());
-}
+include 'config.php';
 
 function query($sql) {
 	global $conn;

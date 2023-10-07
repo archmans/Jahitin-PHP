@@ -35,5 +35,5 @@ function resetSearch() {
     document.getElementById("search-term").value = "";
     document.getElementById("sort-Alphabet").selectedIndex = 0;
     document.getElementById("filter-tailor").selectedIndex = 0;
-    searchTailor(1); // Mencari dengan reset
+    searchTailor(1);
 }

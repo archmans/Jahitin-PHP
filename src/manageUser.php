@@ -9,7 +9,7 @@ if (!isset($_SESSION["login"])) {
     exit;
 }
 
-require 'controller/functionsUser.php';
+include 'controller/functionsUser.php';
 
 $user = query("select * from users");
 
@@ -37,7 +37,7 @@ $user = query("select * from users");
 				<ul>
 					<li><a href="homepageAdmin.php">Tailor</a></li>
 					<li><a href="manageUser.php" style="color: #279864">User</a></li>
-					<li><a href="backend/logout.php">Logout</a></li>
+					<li><a href="controller/logout.php">Logout</a></li>
 				</ul>
 			</div>
 		</nav>

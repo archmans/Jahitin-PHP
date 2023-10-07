@@ -4,7 +4,7 @@ if (!isset($_SESSION["login"])) {
     header("location: loginPage.php");
     exit;
 }
-require 'functionsReview.php';
+include 'functionsReview.php';
 $reviewID = $_GET["id"];
 $penjahit = query("select * from review where reviewID = $reviewID")[0];
 $penjahitID = $penjahit["penjahitID"];

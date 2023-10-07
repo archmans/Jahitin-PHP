@@ -1,5 +1,5 @@
 <?php
-    include "backend/registerBackend.php";
+    include "controller/registerBackend.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@
 </head>
 <body>
     <div class="container">
-    <form action="backend/registerBackend.php" method="POST" class='login-email'>
+    <form action="controller/registerBackend.php" method="POST" class='login-email'>
             <div class="logo-container">
                 <img src="assets\logo.png" alt="Logo">
             </div>

@@ -1,14 +1,5 @@
 <?php
-$server = "localhost";
-$username = "root";
-$password = "";
-$database = "jahitin";
-
-$conn = mysqli_connect($server, $username, $password, $database);
-
-if (!$conn) {
-    die("Connection Failed: " . mysqli_connect_error());
-}
+include 'config.php';
 	
 function query($sql) {
 	global $conn;
@@ -117,14 +108,12 @@ function addTailor($data) {
 	$alamat = htmlspecialchars($data["alamat"]);
     $jenis = htmlspecialchars($data["jenis"]);
 
-	// upload gambar
 	$foto = 'foto_tailor';
 	$foto_tailor = uploadGambar($foto);
 	if( !$foto_tailor ) {
 		return false;
 	}
 
-	// upload video
 	$video = 'video_tailor';
 	$video_tailor = uploadVid($video);
 	if( !$video_tailor ) {
@@ -149,7 +138,6 @@ function updateTailor($data) {
 	$oldFoto = htmlspecialchars($data["oldFoto"]);
 	$oldVideo = htmlspecialchars($data["oldVideo"]);
 
-	// cek apakah user pilih gambar baru atau tidak
     if ($_FILES['foto_tailor']['error'] === 4) {
         $foto_tailor = $oldFoto;
     } else {
@@ -161,7 +149,6 @@ function updateTailor($data) {
         }
     }
 
-    // cek apakah user pilih video baru atau tidak
     if ($_FILES['video_tailor']['error'] === 4) {
         $video_tailor = $oldVideo;
     } else {
@@ -186,14 +173,3 @@ function updateTailor($data) {
 	mysqli_query($conn, $sql);
 	return mysqli_affected_rows($conn);
 }
-
-function search($keword) {
-	$query = "SELECT * FROM tailor 
-				WHERE 
-					nama LIKE '%$keword%' OR
-					alamat LIKE '%$keword%' OR
-					jenis LIKE '%$keword%'
-			";
-	return query($query);
-}
-?>

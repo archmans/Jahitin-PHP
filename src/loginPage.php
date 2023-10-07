@@ -1,5 +1,5 @@
 <?php
-include "backend/loginBackend.php";
+include "controller/loginBackend.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +13,7 @@ include "backend/loginBackend.php";
 </head>
 <body>
     <div class='container'>
-        <form action="backend/loginBackend.php" method="POST" class='login-email'>
+        <form action="controller/loginBackend.php" method="POST" class='login-email'>
             <div class="logo-container">
                 <img src="assets/logo.png" alt="Logo">
             </div>

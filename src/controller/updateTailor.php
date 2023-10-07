@@ -8,7 +8,7 @@ if (!isset($_SESSION["login"])) {
     header("location: loginPage.php");
     exit;
 }
-require 'functions.php';
+include 'functions.php';
 
 $tailorID = $_GET["id"];
 $tailor = query("SELECT * FROM tailor WHERE tailorID = $tailorID")[0];
@@ -55,7 +55,7 @@ if( isset($_POST["update"]) ) {
 				<ul>
 					<li><a href="../homepageAdmin.php">Tailor</a></li>
 					<li><a href="../manageUser.php">User</a></li>
-					<li><a href="../backend/logout.php">Logout</a></li>
+					<li><a href="../controller/logout.php">Logout</a></li>
 				</ul>
 			</div>
 		</nav>

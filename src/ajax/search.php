@@ -1,5 +1,5 @@
 <?php
-require '../controller/functions.php';
+include '../controller/functions.php';
 
 $keyword = $_POST["keyword"];
 $sort = $_POST["sort"];

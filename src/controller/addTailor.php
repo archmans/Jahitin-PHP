@@ -8,7 +8,7 @@ if (!isset($_SESSION["login"])) {
     header("location: loginPage.php");
     exit;
 }
-require 'functions.php';
+include 'functions.php';
 
 if( isset($_POST["tambah"]) ) {
 	if( addTailor($_POST) > 0 ) {
@@ -56,7 +56,7 @@ if( isset($_POST["tambah"]) ) {
 				<ul>
 					<li><a href="..\homepageAdmin.php">Tailor</a></li>
 					<li><a href="..\manageUser.php">User</a></li>
-					<li><a href="..\backend\logout.php">Logout</a></li>
+					<li><a href="..\controller\logout.php">Logout</a></li>
 				</ul>
 			</div>
 		</nav>

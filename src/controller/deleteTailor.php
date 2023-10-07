@@ -8,7 +8,7 @@ if (!isset($_SESSION["login"])) {
     header("location: loginPage.php");
     exit;
 }
-require 'functions.php';
+include 'functions.php';
 $tailorID = $_GET["id"];
 
 if( deleteTailor($tailorID) > 0 ) {

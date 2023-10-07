@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 03 Okt 2023 pada 12.19
+-- Waktu pembuatan: 07 Okt 2023 pada 11.05
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -40,7 +40,8 @@ CREATE TABLE `review` (
 --
 
 INSERT INTO `review` (`reviewID`, `penjahitID`, `ulasan`, `foto_ulasan`, `video_ulasan`) VALUES
-(2, 1, 'Puas Banget', 'netflix.jpeg', 'netflixVid.mp4');
+(6, 17, 'Keren', '651e9529c652d.png', '651e9529c662a.mp4'),
+(7, 17, 'Mata Pancing', '651fa296a146c.jpg', '651fa296a1930.mp4');
 
 -- --------------------------------------------------------
 
@@ -62,9 +63,10 @@ CREATE TABLE `tailor` (
 --
 
 INSERT INTO `tailor` (`tailorID`, `nama`, `alamat`, `jenis`, `foto_tailor`, `video_tailor`) VALUES
-(1, 'Ganteng', 'Sayang', 'Wedding', 'netflix.jpeg', 'netflixVid.mp4'),
-(6, 'Cantik', 'Legacy', 'Permak', 'example.png', 'exampleVid.mp4'),
-(12, 'Handsome', 'Flosse', 'Wedding', '651acc771ea1b.jpeg', '651acc771f015.mp4');
+(16, 'Mas Witcher', 'Sayang', 'Service', '651e9437dc563.jpeg', '651e9437dc7fa.mp4'),
+(17, 'Mas Tailor', 'Flosse', 'Custom', '651e94c1b49e7.jpeg', '651e94c1b4ae9.mp4'),
+(18, 'Mas Steve', 'Puri', 'Service', '651e94e4c1a6f.jpg', '651e94e4c1e05.mp4'),
+(19, 'Mas Bucky', 'Legacy', 'Custom', '651e9508b4f88.jpeg', '651e9508b527a.mp4');
 
 -- --------------------------------------------------------
 
@@ -76,16 +78,17 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(20) NOT NULL,
+  `role` varchar(10) NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `username`, `password`) VALUES
-(1, 'salmanalga@gmail.com', 'alfa', '1234'),
-(2, 'satu@gmail.com', 'salman', '123');
+INSERT INTO `users` (`id`, `email`, `username`, `password`, `role`) VALUES
+(2, 'admin@admin.com', 'admin', 'admin', 'admin'),
+(5, 'salmanalfa095@gmail.co', 'satuk', '123123qw', 'user');
 
 --
 -- Indexes for dumped tables
@@ -117,19 +120,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `review`
 --
 ALTER TABLE `review`
-  MODIFY `reviewID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `reviewID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `tailor`
 --
 ALTER TABLE `tailor`
-  MODIFY `tailorID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `tailorID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

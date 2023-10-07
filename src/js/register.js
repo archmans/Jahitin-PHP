@@ -124,9 +124,9 @@ function updateSubmitButton() {
     console.log("isPasswordInputValid: " + isPasswordInputValid);
     if (isUsernameInputValid && isEmailInputValid && isPasswordInputValid) {
         console.log("All inputs are valid");
-        submitBtn.disabled = false; // Enable the button
+        submitBtn.disabled = false;
     } else {
         console.log("Not all inputs are valid");
-        submitBtn.disabled = true; // Disable the button
+        submitBtn.disabled = true;
     }
 }
