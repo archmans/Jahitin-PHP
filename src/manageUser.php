@@ -74,7 +74,7 @@ $user = query("select * from users");
 						<td><?= $row["username"]; ?></td>
 						<td><?= $row["email"]; ?></td>
 						<td>
-							<a class="delete" href="controller/deleteUser.php?id=<?= $row["id"]; ?>" onclick="return confirm('Are you sure?');">
+							<a class="delete" href="controller/deleteUser.php?id=<?= $row["id"]; ?>" onclick="return confirm('Are you sure delete this user?');">
 								<i class="far fa-trash-alt"></i> delete
 							</a>
 						</td>

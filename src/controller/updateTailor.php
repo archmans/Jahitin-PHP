@@ -110,7 +110,7 @@ if( isset($_POST["update"]) ) {
 						</div>
 						<div class="form-button">
 							<li>
-								<button type="submit" id="submit" name="update" href="..\homepageAdmin.php">Update Tailor</button>
+								<button type="submit" id="submit" name="update" onclick="return confirm('Are you sure to update the tailor?')">Update Tailor</button>
 							</li>
 						</div>
 					</div>

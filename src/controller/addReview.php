@@ -93,7 +93,7 @@ if( isset($_POST["tambah"]) ) {
 							<li>
 						</div>
 					</div>
-						<button type="submit" id="submit" name="tambah">Add Review</button>
+						<button type="submit" id="submit" name="tambah" onclick="return confirm('Are you sure to add the review?')">Add Review</button>
 					</li>
 				</ul>
 			</form>

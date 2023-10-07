@@ -67,9 +67,9 @@ $tailorPerPage = query($sql . " LIMIT " . $firstData . ", " . $countDataperPage)
                     </div>  
                 </div>
                 <div class="tailor-actions">
-                    <a class="Update" href="controller/updateTailor.php?id=<?php echo $row["tailorID"]; ?>">update</a>
-                    <a class="Review" href="reviewPage.php?id=<?php echo $row["tailorID"]; ?>">review</a>
-                    <a class="Delete" href="controller/deleteTailor.php?id=<?php echo $row["tailorID"]; ?>" onclick="return confirm('yakin?')">delete</a></td>
+                    <a class="update" href="controller/updateTailor.php?id=<?php echo $row["tailorID"]; ?>">Update</a>
+                    <a class="review" href="reviewPage.php?id=<?php echo $row["tailorID"]; ?>">Review</a>
+                    <a class="delete" href="controller/deleteTailor.php?id=<?php echo $row["tailorID"]; ?>" onclick="return confirm('yakin?')">Delete</a></td>
                 </div>
                 </li>
             </div>

@@ -108,7 +108,7 @@ if( isset($_POST["tambah"]) ) {
 						</div>
 						<div class="form-button">
 							<li>
-								<button type="submit" name="tambah">Add Tailor</button>
+								<button type="submit" name="tambah" onclick="return confirm('Are you sure to add the tailor?')">Add Tailor</button>
 							</li>
 						</div>
 					</div>

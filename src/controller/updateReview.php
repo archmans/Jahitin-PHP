@@ -101,7 +101,7 @@ if( isset($_POST["update"]) ) {
 							<li>
 						</div>
 					</div>
-						<button type="submit" id="submit" name="update">Update Review</button>
+						<button type="submit" id="submit" name="update" onclick="return confirm('Are you sure to update the review?')">Update Review</button>
 					</li>
 				</ul>
 			</form>

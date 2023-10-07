@@ -84,7 +84,7 @@ if( isset($_POST["save"]) ) {
                     <input type="password" name="password" id="password" value="<?php echo $user["password"]; ?>">
                 </li>
                 <li>
-                    <button type="submit" id="submit" name="save">Save</button>
+                    <button type="submit" id="submit" name="save" onclick="return confirm('Are you sure?')">Save</button>
                 </li>
             </ul>
         </form>
