@@ -25,3 +25,4 @@ if (isset($_POST['register'])) {
         header("location: ..\registerPage.php");
     }
 }
+?>
