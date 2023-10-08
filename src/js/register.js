@@ -23,6 +23,7 @@ usernameInput.addEventListener("input", function() {
             usernameInput.style.border = "2px solid red";
             errorMsgUsername.style.display = "block";
             errorMsgUsername.style.color = "red";
+            errorMsgUsername.fontSize = "10px";
             errorMsgUsername.innerHTML = "Username must be 1-20 characters long and can only contain letters, numbers, underscores and periods.";
             isUsernameInputValid = false;
         }
