@@ -18,7 +18,7 @@ if( deleteUser($userID) > 0 ) {
 		</script>";
 } else {
 	echo "<script>
-			alert('data gagal dihapus!');
+			alert('data gagal dihapus!, admin tidak bisa menghapus akun sendiri ketika sedang dalam session!');
 			document.location.href = '../manageUser.php';
 		</script>";
 }

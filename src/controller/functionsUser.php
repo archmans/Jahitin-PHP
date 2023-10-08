@@ -36,6 +36,9 @@ function updateProfil($data) {
 
 function deleteUser($id) {
 	global $conn;
+	if ($id == $_SESSION["id"]) {
+		return false;
+	}
 	mysqli_query($conn, "DELETE FROM users WHERE id = $id");
 	return mysqli_affected_rows($conn);
 }
