@@ -31,12 +31,11 @@ $tailorPerPage = query($sql . " LIMIT " . $firstData . ", " . $countDataperPage)
 
 ?>
 <ul class="tailor-list">
-    <!-- <?php $i = 1; ?> -->
+    <?php $i = 1; ?>
     <?php foreach( $tailorPerPage as $row ) { ?>
         <div class="tailor-card-actions">
             <div class="tailor-card-number">
                 <li class="tailor-item" style="flex-direction: column">
-                <!-- <div class="tailor-counter"><?= $i; ?></div> -->
                 <div class="tailor-card">
                     <div class="tailor-media">
                         <img src="img/<?= $row["foto_tailor"]; ?>" alt="<?= $row["nama"]; ?>" class="tailor-photo">
@@ -74,7 +73,7 @@ $tailorPerPage = query($sql . " LIMIT " . $firstData . ", " . $countDataperPage)
                 </li>
             </div>
         </div>
-    <!-- <?php $i++; ?> -->
+    <?php $i++; ?>
     <?php } ?>
 </ul>
 <div class="pagination">

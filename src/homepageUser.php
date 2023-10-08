@@ -78,10 +78,9 @@ $tailor = query("select * from tailor");
 
     <div class="search-results-list" id="search-results-list">
         <ul class="tailor-list">
-            <!-- <?php $i = 1; ?> -->
+            <?php $i = 1; ?>
             <?php foreach( $tailor as $row ) { ?>
                 <li class="tailor-item" >
-                    <!-- <div class="tailor-counter"><?= $i; ?></div> -->
                     <div class="tailor-card">
                     <div class="tailor-media">
                         <img src="img/<?= $row["foto_tailor"]; ?>" alt="<?= $row["nama"]; ?>" class="tailor-photo">
@@ -112,7 +111,7 @@ $tailor = query("select * from tailor");
                     </div>
                 </div>
                 </li>
-                <!-- <?php $i++; ?> -->
+                <?php $i++; ?>
             <?php } ?>
         </ul>
     </div>
