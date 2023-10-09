@@ -24,7 +24,7 @@ usernameInput.addEventListener("input", function() {
             errorUsername.style.display = "block";
             errorUsername.style.color = "red";
             errorUsername.fontSize = "10px";
-            errorUsername.innerHTML = "Username must be 1-20 characters, only contain letters, numbers, underscores and periods.";
+            errorUsername.innerHTML = "1-20 char, only contain letters, numbers, underscores and periods.";
             isUsernameInputValid = false;
         }
     } else {
@@ -107,7 +107,7 @@ passwordInput.addEventListener("input", function() {
             errorPassword.style.display = "block";
             errorPassword.style.color = "red";
             errorPassword.style.fontSize = "10px";
-            errorPassword.innerHTML = "Password at least 8 characters, contain at least one letter and one number";
+            errorPassword.innerHTML = "At least 8 characters, contain one letter and one number";
             isPasswordInputValid = false;
         }
     } else {
