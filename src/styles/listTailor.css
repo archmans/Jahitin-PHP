@@ -100,9 +100,10 @@ p.tailor-category {
 a.button {
     font-size: 1rem;
     color: #279864;
-    text-decoration: none;
+    text-decoration: underline;
     cursor: pointer;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-bottom: 0.5rem;
 }
 
 .button.active .button:hover {
