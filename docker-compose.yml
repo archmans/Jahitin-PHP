@@ -9,6 +9,7 @@ services:
       - "80:80"
     volumes:
       - ./:/var/www/html
+      - ./php.ini:/usr/local/etc/php/php.ini
     
   mysql_db:
     image: mysql:latest
