@@ -1,5 +1,4 @@
 # IF3110 Pengembangan Aplikasi Berbasis Web (Jahitin App)
-> This is a project done to fulfil one of IF3110's course assignment.
 
 ## Table of Contents
 * [Description](#description)
@@ -8,6 +7,7 @@
 * [How To Run](#how-to-run)
 * [Screenshots](#screenshots)
 * [Authors](#authors)
+* [LightHouse Score](#lighthouse-score)
 
 ## Description
 Aplikasi ini merupakan aplikasi berbasis web yang memiliki fungsionalitas utama, melakukan pencarian dan menampilkan list penjahit beserta karya dan review-nya. Pembuatan aplikasi ini melibatkan beberapa bahasa pemrograman tanpa bergantung pada library eksternal. Bahasa dan tools yang digunakan termasuk JavaScript, HTML, dan CSS untuk sisi klien, PHP untuk sisi server, serta MySQL untuk menyimpan basis data.
@@ -155,3 +155,34 @@ Untuk menjalankan program pastikan Anda telah mendownload dan menginstall hal-ha
 |Update Tailor|✔️|✔️|
 |Manage User|✔️|✔️|
 
+## LightHouse Score
+1. LightHouse Score Login Page
+    ---
+    <img src="screenshot/lighthouseLogin.png" style="width: 500px" />
+2. LightHouse Score Register Page
+    ---
+    <img src="screenshot/lighthouseRegister.png" style="width: 500px"/>
+3. LightHouse Score Homepage User
+    ---
+    <img src="screenshot/lighthouseHomepageUser.png" style="width: 500px"/>
+4. LightHouse Score Homepage Admin
+    ---
+    <img src="screenshot/lighthouseHomepageAdmin.png" style="width: 500px"/>
+5. LightHouse Score Profile Page
+    ---
+    <img src="screenshot/lighthouseProfilPage.png" style="width: 500px"/>
+6. LightHouse Score Tailor's Review Page
+    ---
+    <img src="screenshot/lighthouseReviewTailor.png" style="width: 500px"/>
+7. LightHouse Score Add Tailor's Review Page
+    ---
+    <img src="screenshot/lighthouseAddReviewTailor.png" style="width: 500px"/>
+8. LightHouse Score Update Tailor's Review Page
+    ---
+    <img src="screenshot/lighthouseUpdateReview.png" style="width: 500px"/>
+9. LightHouse Score Add Tailor Page
+    ---
+    <img src="screenshot/lighthouseAddTailor.png" style="width: 500px"/>
+10. LightHouse Score Update Tailor Page
+    ---
+    <img src="screenshot/lighthouseUpdateTailor.png" style="width: 500px"/>
