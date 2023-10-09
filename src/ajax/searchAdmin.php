@@ -8,7 +8,7 @@ $filter = $_POST["filter"];
 $sql = "SELECT * FROM tailor WHERE 1=1 "; // "1=1" mempermudah penambahan kondisi
 
 if (!empty($keyword)) {
-    $sql .= "AND nama LIKE '%$keyword%' ";
+    $sql .= "AND nama LIKE '%$keyword%' OR alamat LIKE '%$keyword%' ";
 }
 
 if (!empty($filter)) {
