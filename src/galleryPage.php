@@ -22,6 +22,7 @@ $penjahit = query("select * from tailor where tailorID = $idPenjahit");
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles\homepage.css">
+    <link rel="stylesheet" href="styles\galleryPage.css">
 </head>
 
 <body>
@@ -104,121 +105,5 @@ $penjahit = query("select * from tailor where tailorID = $idPenjahit");
     </div>
 
 </body>
-<style>
-    .container-gallery{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 3rem;
-    }
-
-    .image-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.5rem; /* Jarak antar gambar */
-        margin-top: 2rem;
-    }
-
-    .image-item {
-        display: flex;
-        flex-direction: column;
-        width: calc(50% - 1rem); /* Lebar gambar setengah dari lebar container dengan jarak 10px */
-        margin-bottom: 1rem; /* Jarak bawah antar baris gambar */
-    }
-
-    .image-gallery {
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .image-title {
-        font-size: 1rem;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 1rem;
-    }
-    .container-about{
-        height: 10rem;
-        width: 30%;
-        padding: 0.5rem;
-    }
-
-    .container-about p{
-        /* rata kanan kiri */
-        text-align: justify;
-        font-weight: normal;
-
-    }
-
-    .profil-photo{
-        max-width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    .button-review {
-        text-decoration: none;
-        color: #279864;
-        /* font-weight: bold; */
-    }
-
-    .button-review:hover {
-        text-decoration: underline;
-    }
-
-    .container-media-gallery{
-        height:200rem;
-        width: 60%;
-        padding: 0.5rem;
-
-    }
-
-    .video-gallery{ 
-        display: flex;
-        justify-content: center;
-        margin-top: 2rem;
-    }
-
-    .line {
-        width: 100%;
-        height: 0.2rem;
-        background-color: black;
-        margin: 0.5rem 0rem;
-    }
-
-    @media (max-width: 750px) {
-        .container-gallery {
-            flex-direction: column;
-            align-items: center;
-        }
-        .container-about {
-            position: static;
-            top: 0px;
-            height: auto;
-            display: flex;
-            flex-direction: row;
-            width: auto;
-            justify-content: center
-        }
-        .profil-photo {
-            max-width: 40%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-        }
-        .about {
-            width: 50%;
-            padding-left: 1rem;
-        }
-        .container-media-gallery {
-            height: auto;
-            width: 90%;
-            padding: 0.5rem;
-        }
-        .image-grid {
-            gap: 0.5rem;
-        }
-        .image-item {
-            width: calc(50% - 0.5rem);
-        }
-    }
-</style>
 
 </html>
