@@ -76,14 +76,13 @@ h1.tailor-name {
 h2 {
     font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 0.2rem;
 }
 
 p.tailor-address, 
 p.tailor-category {
     font-size: 1rem;
     font-weight: 500;
-    padding: 0 1rem 1rem 0;
+    padding: 0 1rem 0rem 0;
 }
 
 /* .tailor-actions a {
@@ -258,6 +257,44 @@ a.button {
     transition: all 0.5s ease; 
 }
 
+.logo {
+    padding-left: 3rem;
+}
+
+.button-premium {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.button-subscribe,
+.button-see-gallery {
+    background-color: #279864;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+.button-pending {
+    background-color: #FFB34F;
+    color: white;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.button-subscribe:hover,
+.button-see-gallery:hover {
+    background-color: #1E7E5D;
+}
+.button-pending:hover {
+    background-color: #E6A03A;
+}
+
 @media screen and (max-width: 700px){
     .box{
       width: 70%;
@@ -304,11 +341,20 @@ a.button {
         text-align: center;
     }
 
+    p.tailor-address, 
+    p.tailor-category {
+        padding: 0;
+    }
+
     .btn {
         width: 4rem;
         height: 2rem;
         margin: 0 0.5rem;
         font-size: 10px;
+    }
+
+    .button-premium {
+        margin-top: 1rem;
     }
 }
 
