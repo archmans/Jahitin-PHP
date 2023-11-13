@@ -52,6 +52,7 @@ if( isset($_POST["save"]) ) {
             <div class="nav-right">
                 <ul>
                     <li><a href="homepageUser.php">Home</a></li>
+                    <li><a href="tailorPremPage.php">Premium</a></li>
                     <li><a href="profilPage.php" style="color: #279864">Profile</a></li>
                     <li><a href="controller/logout.php">Logout</a></li>
                 </ul>

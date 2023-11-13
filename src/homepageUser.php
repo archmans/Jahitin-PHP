@@ -39,6 +39,7 @@ $tailor = query("select * from tailor");
             <div class="nav-right">
                 <ul>
                     <li><a href="homepageUser.php" style="color: #279864">Home</a></li>
+                    <li><a href="tailorPremPage.php">Premium</a></li>
                     <li><a href="profilPage.php">Profile</a></li>
                     <li><a href="controller/logout.php">Logout</a></li>
                 </ul>
@@ -87,27 +88,27 @@ $tailor = query("select * from tailor");
                     </div>
                     <div class="tailor-info">
                         <h1 class="tailor-name"><?= $row["nama"]; ?></h1>
-                            <h2>Address</h2>
-                            <p class="tailor-address"><?= $row["alamat"]; ?></p>
-                            <h2>Category</h2>
-                            <p class="tailor-category"><?= $row["jenis"]; ?></p>
-                            <h2>Review</h2>
-                            <a class="button" href="reviewPage.php?id=<?php echo $row["tailorID"]; ?>">Tailor's Review</a>
-                            <h2>Karya</h2>
-                            <a class="button" href="#popupVid<?= $i ?>">Video Karya Penjahit</a>
-                            <div id="popupVid<?= $i ?>" class="overlay">
-                                <div class="container-popUp">
-                                    <div class="close">
-                                        <a class="x" href="" onclick="closePopupVid(<?= $i ?>)">&times;</a>
-                                    </div>
-                                    <div class="popup">
-                                        <h1><?= $row["nama"]; ?></h1>
-                                        <div class="content">
-                                            <video src="vid/<?= $row["video_tailor"]; ?>" id="vid<?= $i ?>" style="max-height: 450px;" controls></video>
-                                        </div>
+                        <h2>Address</h2>
+                        <p class="tailor-address"><?= $row["alamat"]; ?></p>
+                        <h2>Category</h2>
+                        <p class="tailor-category"><?= $row["jenis"]; ?></p>
+                        <h2>Review</h2>
+                        <a class="button" href="reviewPage.php?id=<?php echo $row["tailorID"]; ?>">Tailor's Review</a>
+                        <h2>Karya</h2>
+                        <a class="button" href="#popupVid<?= $i ?>">Video Karya Penjahit</a>
+                        <div id="popupVid<?= $i ?>" class="overlay">
+                            <div class="container-popUp">
+                                <div class="close">
+                                    <a class="x" href="" onclick="closePopupVid(<?= $i ?>)">&times;</a>
+                                </div>
+                                <div class="popup">
+                                    <h1><?= $row["nama"]; ?></h1>
+                                    <div class="content">
+                                        <video src="vid/<?= $row["video_tailor"]; ?>" id="vid<?= $i ?>" style="max-height: 450px;" controls></video>
                                     </div>
                                 </div>
-                            </div>   
+                            </div>
+                        </div>   
                     </div>
                 </div>
                 </li>
@@ -116,11 +117,10 @@ $tailor = query("select * from tailor");
         </ul>
     </div>
 
-    <style>
+<style>
     .logo {
         padding-left: 3rem;
     }
-
 </style>
         <script src="js\popUpVideo.js"></script>
         <script src="js\search.js"></script>

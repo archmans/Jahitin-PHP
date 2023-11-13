@@ -52,6 +52,7 @@ $review = query("select * from review where penjahitID = $idPenjahit");
 					<li><a href="controller/logout.php">Logout</a></li>
 				<?php } else { ?>
 					<li><a href="homepageUser.php">Home</a></li>
+                    <li><a href="tailorPremPage.php">Premium</a></li>
 					<li><a href="profilPage.php">Profile</a></li>
 					<li><a href="controller/logout.php">Logout</a></li>
 				<?php } ?>
