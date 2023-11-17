@@ -32,7 +32,7 @@ $penjahit = query("select * from tailor where tailorID = $idPenjahit");
 		</div>
 		<nav>
 			<div class="nav-left">
-                <a href="tailorPremPage.php" class="arrow-left-button">
+                <a href="premiumPage.php" class="arrow-left-button">
                     <img src="assets\arrow-left-32.png" alt="arrow-left"/>
                 </a>
 			</div>
@@ -42,7 +42,7 @@ $penjahit = query("select * from tailor where tailorID = $idPenjahit");
 			<div class="nav-right">
 				<ul>
 					<li><a href="homepageUser.php">Home</a></li>
-                    <li><a href="tailorPremPage.php" style="color: #279864">Premium</a></li>
+                    <li><a href="premiumPage.php" style="color: #279864">Premium</a></li>
 					<li><a href="profilPage.php">Profile</a></li>
 					<li><a href="controller/logout.php">Logout</a></li>
 				</ul>
