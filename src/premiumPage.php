@@ -10,7 +10,13 @@ if (!isset($_SESSION["login"])) {
 }
 
 include 'controller/functions.php';
+include 'controller/soap.php';
 $tailor = query("select * from tailor");
+
+if (isset($_POST["subscribe"])) {
+    $id = $_SESSION["id"];
+    newSubscription($id);
+}
 
 ?>
 
@@ -68,7 +74,9 @@ $tailor = query("select * from tailor");
         <h2>Find Your Perfect Tailor</h2>
         <p>See their gallery to find your perfect tailor!</p>
         <!-- button subscribe -->
-        <a class="button-subscribe">SUBSCRIBE</a>
+        <form action="" method="post">
+            <button type="submit" name="subscribe" class="button-subscribe">SUBSCRIBE</button>
+        </form>
         <p class="pending">PENDING</p>
     </div>
 </body>
