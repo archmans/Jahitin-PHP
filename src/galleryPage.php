@@ -58,22 +58,7 @@ $penjahit = query("select * from tailor where tailorID = $idPenjahit");
 	</div>
 
     <div class="container-gallery">
-        <div class="container-about">
-            <img src="img/<?php echo $penjahit[0]["foto_tailor"];?>" alt="<?php echo $penjahit[0]["nama"];?>" class="profil-photo">
-            <div class="about">
-                <h2>About</h2>
-                <div class="line"></div>
-                <p><?php echo $penjahit[0]["nama"];?> merupakan layanan jasa jahit kategori <?php echo $penjahit[0]["jenis"];?> yang berlokasi di <?php echo $penjahit[0]["alamat"];?>. <a href="reviewPage.php?id=<?php echo $idPenjahit; ?>" class="button-review">See Reviews</a>.</p>
-            </div>
-        </div>
         <div class="container-media-gallery">
-            <div class="container-video">
-                <h2>Video</h2>
-                <div class="line"></div>
-                <div class="video-gallery">
-                    <video src="vid/<?= $row["video_tailor"]; ?>" id="vid<?= $i ?>" style="max-width: 500px" controls></video>
-                </div>
-            </div>
             <div class="container-image">
                 <h2>Image</h2>
                 <div class="line"></div>

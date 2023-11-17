@@ -14,7 +14,7 @@
 .image-item {
     display: flex;
     flex-direction: column;
-    width: calc(50% - 1rem);
+    width: calc(33.3% - 1rem);
     margin-bottom: 1rem;
 }
 
@@ -29,43 +29,12 @@
     text-align: center;
     margin-top: 1rem;
 }
-.container-about{
-    height: 10rem;
-    width: 30%;
-    padding: 0.5rem;
-}
 
-.container-about p{
-    /* rata kanan kiri */
-    text-align: justify;
-    font-weight: normal;
-
-}
-
-.profil-photo{
-    max-width: 100%;
-    margin-bottom: 1rem;
-}
-
-.button-review {
-    text-decoration: none;
-    color: #279864;
-}
-
-.button-review:hover {
-    text-decoration: underline;
-}
 
 .container-media-gallery{
-    width: 60%;
+    width: 90%;
     padding: 0.5rem;
 
-}
-
-.video-gallery{ 
-    display: flex;
-    justify-content: center;
-    margin-top: 2rem;
 }
 
 .line {
@@ -80,24 +49,7 @@
         flex-direction: column;
         align-items: center;
     }
-    .container-about {
-        position: static;
-        top: 0px;
-        height: auto;
-        display: flex;
-        flex-direction: row;
-        width: auto;
-        justify-content: center
-    }
-    .profil-photo {
-        max-width: 40%;
-        object-fit: cover;
-        margin-bottom: 1rem;
-    }
-    .about {
-        width: 50%;
-        padding-left: 1rem;
-    }
+    
     .container-media-gallery {
         height: auto;
         width: 90%;
